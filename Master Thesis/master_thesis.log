@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.12.19)  2 FEB 2014 10:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.12.19)  2 FEB 2014 21:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -134,11 +134,6 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 373.
-Package: cite 2010/09/10  v 5.3
-)
 (/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
 Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
 LaTeX Info: Redefining \em on input line 420.
@@ -248,6 +243,13 @@ e
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip51
+\bibsep=\skip52
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count103
+)
 (./master_thesis.aux)
 \openout1 = `master_thesis.aux'.
 
@@ -266,16 +268,16 @@ LaTeX Font Info:    ... okay on input line 66.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
+\scratchcounter=\count104
 \scratchdimen=\dimen115
 \scratchbox=\box29
-\nofMPsegments=\count104
-\nofMParguments=\count105
+\nofMPsegments=\count105
+\nofMParguments=\count106
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count106
+\MPscratchCnt=\count107
 \MPscratchDim=\dimen116
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
 \everyMPtoPDFconversion=\toks30
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 76.
@@ -298,7 +300,7 @@ Package pdftex.def Info: cvut-logo-bw.pdf used on input line 84.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./cvut-logo-bw.pdf>]
 [2] [3] [4]
 \odstavecbox=\box30
-\vyskaodstavce=\skip51
+\vyskaodstavce=\skip53
 
 Overfull \hbox (12.72366pt too wide) in paragraph at lines 161--182
 [][] 
@@ -314,34 +316,55 @@ Overfull \hbox (12.72366pt too wide) in paragraph at lines 161--182
 
 ]
 Chapter 1.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 9.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [8
 
-] [9
-
 ]
-No file master_thesis.bbl.
-[10
+<Images/give-client-servers.pdf, id=41, 378.13773pt x 202.53165pt>
+File: Images/give-client-servers.pdf Graphic file (type pdf)
+
+<use Images/give-client-servers.pdf>
+Package pdftex.def Info: Images/give-client-servers.pdf used on input line 20.
+(pdftex.def)             Requested size: 298.75262pt x 160.01678pt.
+ [9 <./Images/give-client-servers.pdf>]
+[10]) [11] [12
+
+] (./master_thesis.bbl
+Underfull \hbox (badness 1360) in paragraph at lines 29--36
+[]\T1/cmr/m/n/12 Kristina Strieg-nitz, Alexan-dre De-nis, An-drew Gar-gett, Kon
+-stantina Garoufi,
+ []
+
+) [13
+
+] [14
 
 ] (./master_thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 3163 strings out of 495059
- 40650 string characters out of 3182029
- 99383 words of memory out of 3000000
- 6264 multiletter control sequences out of 15000+200000
- 16967 words of font info for 51 fonts, out of 3000000 for 9000
+ 3448 strings out of 495059
+ 44547 string characters out of 3182029
+ 106498 words of memory out of 3000000
+ 6535 multiletter control sequences out of 15000+200000
+ 20220 words of font info for 58 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,9n,23p,326b,188s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,9n,23p,922b,259s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/vhonzik/.texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecti1200.600pk> </home/vhonzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200
-.600pk> </home/vhonzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> <
-/home/vhonzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/vho
-nzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/vhonzik/.tex
-mf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/vhonzik/.texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ecbx1728.600pk>
-Output written on master_thesis.pdf (10 pages, 88120 bytes).
+/ectt1000.600pk> </home/vhonzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700
+.600pk> </home/vhonzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> <
+/home/vhonzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/vho
+nzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/vhonzik/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/vhonzik/.texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/vhonzik/.texmf-var/fonts/pk/lj
+four/jknappen/ec/ecbx2488.600pk> </home/vhonzik/.texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecbx1200.600pk> </home/vhonzik/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
+cbx1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y8.pfb>
+Output written on master_thesis.pdf (14 pages, 136141 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 418 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

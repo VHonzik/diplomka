@@ -1,0 +1,37 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Koller et~al.(2010{\natexlab{a}})Koller, Striegnitz, Byron, Cassell,
+  Dale, Moore, and Oberlander]{koller2010first}
+Alexander Koller, Kristina Striegnitz, Donna Byron, Justine Cassell, Robert
+  Dale, Johanna Moore, and Jon Oberlander.
+\newblock The first challenge on generating instructions in virtual
+  environments.
+\newblock In \emph{Empirical Methods in Natural Language Generation}, pages
+  328--352. Springer, 2010{\natexlab{a}}.
+
+\bibitem[Koller et~al.(2010{\natexlab{b}})Koller, Striegnitz, Gargett, Byron,
+  Cassell, Dale, Moore, and Oberlander]{koller2010report}
+Alexander Koller, Kristina Striegnitz, Andrew Gargett, Donna Byron, Justine
+  Cassell, Robert Dale, Johanna Moore, and Jon Oberlander.
+\newblock Report on the second nlg challenge on generating instructions in
+  virtual environments (give-2).
+\newblock In \emph{Proceedings of the 6th international natural language
+  generation conference}, pages 243--250. Association for Computational
+  Linguistics, 2010{\natexlab{b}}.
+
+\bibitem[Striegnitz et~al.(2011)Striegnitz, Denis, Gargett, Garoufi, Koller,
+  and Theune]{striegnitz2011report}
+Kristina Striegnitz, Alexandre Denis, Andrew Gargett, Konstantina Garoufi,
+  Alexander Koller, and Mari{\"e}t Theune.
+\newblock Report on the second second challenge on generating instructions in
+  virtual environments (give-2.5).
+\newblock In \emph{Proceedings of the 13th European Workshop on Natural
+  Language Generation}, pages 270--279. Association for Computational
+  Linguistics, 2011.
+
+\end{thebibliography}
