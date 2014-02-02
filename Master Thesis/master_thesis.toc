@@ -1,0 +1,5 @@
+\select@language {english}
+\contentsline {chapter}{Introduction}{7}
+\contentsline {chapter}{\numberline {1}GIVE challenge}{8}
+\contentsline {chapter}{Conclusion}{9}
+\contentsline {chapter}{Appendix}{10}
