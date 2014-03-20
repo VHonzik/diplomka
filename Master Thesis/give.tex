@@ -7,7 +7,7 @@ First section will answers basic questions such as what is GIVE Challenge, why w
 \section{Introduction}
 GIVE Challenge was a series of Natural Language Generation (NLG) competitions run from November 2008 to March 2012. Participants were developing NLG systems to navigate human-controlled avatars in a 3D virtual environment. The real-time navigation was realized through written instructions displayed on the screen. Goal of the navigation was to finish a treasure-hunt game. In figure \ref{fig:give-client} we can see a client software with virtual world and example of an instruction. More detailed description of the task and the environment is in the section \ref{sec:task-give-world}.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \centering
 	\includegraphics[width=0.7\textwidth]{Images/give-client}
 	\caption{A human subject is being navigated through the environment.}
@@ -23,7 +23,7 @@ Three basic approaches to evaluation of NLG systems are comparison with annotate
 
 GIVE Challenge proposes and successfully implements a new, in a sense that it wasn't used for NLG before, approach through Internet-based evaluation. The basic premise is using a client-server software methodology. The client is a program installed on test subject computer, which is easily downloadable from a public website. The client connects through the Internet to a matchmaker server and random evaluation world is selected. Matchmaker also connects the client to a randomly selected NLG system, which itself, can be hosted on a different server. Client and NLG systems then communicate back and forth until the task is finished. Matchmaker finally logs the entire sessions to database. Figure \ref{fig:give-clientserver} shows that architecture in a simple diagram.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \centering
 	\includegraphics[width=0.7\textwidth]{Images/give-client-servers}
 	\caption{Software architecture of GIVE Challenge.}
@@ -108,7 +108,7 @@ Walls are actually created automatically by defining shapes of rooms. Rooms can 
 
 The landmarks serve as a decoration but they can be used in an expression generation. Picture is technically a landmark as well, but in GIVE Challenge it often serves another purpose. It covers the safe and needs to be put aside by a button press.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \centering
 	\includegraphics[width=0.75\textwidth]{Images/give-evalworldexmaple}
 	\caption{Example GIVE world viewed in GIVE map viewer utility.}

@@ -15,6 +15,7 @@
 \usepackage{epstopdf}
 \usepackage{lscape}
 \usepackage[round]{natbib}
+\usepackage{booktabs}
 
 \oddsidemargin=10mm   % levý okraj vìtší (kvùli vazbì)
 \topmargin=-15mm      % horní okraj trochu menší
@@ -197,9 +198,10 @@ I would like to thank \vedouci for supervising and shaping my master thesis. I w
 % Následují texty kapitol. Smažete-li následující øádky (text chcete psát pøímo sem), nezapomeòte na CHAPTER!!!
 %\input{navigation.tex}
 %\input{refexpr.tex}
+\input{bground.tex}
 \input{give.tex}
 \input{dataset.tex}
-%\input{komponenty.tex}
+\input{ml.tex}
 
 \chapter*{Conclusion} \addcontentsline{toc}{chapter}{Conclusion}   % SEM NESAHEJTE!
 %\input{zaver.tex}  % Závìr, je vkládán z jiného souboru
@@ -225,7 +227,7 @@ I would like to thank \vedouci for supervising and shaping my master thesis. I w
 %\renewcommand{\appendixname}{Pøíloha} % aby se pøílohy nejmenovaly "Dodatek"  SEM NESAHEJTE!
 
 %-------- zde VYMÌÒTE NÁZVY vkládaných souborù NEBO sem mùžete rovnou napsat text pøíloh (a smažte dva následující øádky)
-%\input{priloha1.tex} % pøíloha 1: vložená z externího souboru
+\input{appendixes.tex} % pøíloha 1: vložená z externího souboru
 %\input{priloha2.tex}
 %\input{priloha3.tex}
 

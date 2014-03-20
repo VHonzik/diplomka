@@ -1,0 +1,73 @@
+\chapter{Machine Learning on RE}
+RE are big part of language realization of a navigation system and especially so in the GIVE scenario. Major part of my work was attempt to apply machine learning techniques on GIVE dataset with a clear goal to help navigation system with RE. This part is presented in this chapter.
+
+In the first section I'll describe attempts at predicting timing of the first reference to a target button. Second section talks about modeling of chains of references.
+
+\section{Introduction}
+\section{Timing of the first reference}
+Work of \citet{stoia2006sentence} was previously mentioned in related work section of chapter \ref{chap:bg}. They applied machine learning on timing of the first reference in a 3D virtual world. The set-up of their experiment is quite similar to the GIVE's one and so I decided it would be interesting to replicate their methodology on GIVE dataset. 
+
+First of all, there are two important differences between their experiment and GIVE dataset to keep in mind. Their tasks also included different actions than pushing buttons (e.g. picking up items) and their worlds had higher diversity and smaller frequency of the distractors.
+
+Now for the preprocessing. I extracted the first references to buttons which needed to be pressed from dataset. I excluded plural references, because of their complexity. Some buttons were placed on top of each other and IG wasn't sure which one need to be pressed. These were excluded as well because of the unnecessary confusion. That left me with 351 first references. Same as \citet{stoia2006sentence} I averaged spatial information over 0.6 seconds window centered on the time of the reference. For each first reference I have chosen one negative example, where IG could refer to the target but chose not to. I picked negative examples randomly from interval between entering room and time of the first reference. Overall, that is 702 data-points with perfectly balanced classes.
+
+As for attributes, I have chosen similarly to \citet{stoia2006sentence} various spatial information. Following list of attributes also includes appropriate figures' numbers. These figures are histograms of the attributes for positive and negative cases and can be found in Appendix.
+
+\begin{itemize}
+\item
+Distance to target button - figure \ref{fig:fref-distrib-dist}
+\item
+Absolute value of angle to target - figure \ref{fig:fref-distrib-angle}
+\item
+Whether target is visible (True/False) - figure \ref{fig:fref-distrib-visib}
+\item
+Number of distractors - figure \ref{fig:fref-distrib-distractors}
+\item
+Number of distracting buttons - figure \ref{fig:fref-distrib-distbuttons}
+\item
+Number of visible buttons with smaller angle to IF than the target button - figure \ref{fig:fref-distrib-distangles}
+\end{itemize}
+
+Once I have extracted these features I have used three machine learning techniques: C4.5 decision tree because of their easy interpretation, naive Bayes to observe effect of all attributes and Support vector machine for linear classification. I used Weka software implementation of previous algorithms \citep{hall2009weka}.
+
+For all the algorithms I used a standard ten-fold cross validation. The results can be seen in table \ref{tab:firstref}. Pruned decision tree for timing of the first reference can be seen in figure \ref{fig:dectree}. I used two simple baselines to compare the results with. I have perfectly balanced classes so the first baseline is 50\%. Simple rule for the first reference is to refer when the target is visible, and delay it if the target is not visible. In my case that is 64.2\%. 
+
+\begin{table}[h!]
+\begin{tabular}{lr}
+\toprule
+Model    & Accuracy (\%)  \\
+\midrule
+Class baseline    & 50.00\\
+Visibility baseline & 64.2\\
+\midrule
+Naive Bayes  & \textbf{64.70} \\
+C4.5 & 63.31 \\
+SVM & 55.42 \\
+\bottomrule
+\end{tabular}
+\caption{Results of first reference timing modeling}
+\label{tab:firstref}
+\end{table}
+
+Only one algorithm was able to get over visibility baseline and not by a significant amount. These results were surprising, because \citet{stoia2006sentence} had success with the same approach on a similar dataset. Reasons for this difference are probably in the differences between their and GIVE set-up as mentioned at the beginning of this section. With increasing number of distractors and particularly distractors of the same category, it seems that spatial features loose their power in predicting the timing of the first reference. The number of visible distractors was the best attribute in their decision tree, but in my tree (figure \ref{fig:dectree}) it had lower information gain and moreover the tree did the split on number of visible buttons not of all distractors.
+
+After not having success with timing of the first references I have focused on chains of references.
+
+\begin{figure}[h!]
+\centering
+\small
+\begin{verbatim}
+Distance to target <= 4.45
+| Is target visible? = False: DELAY
+| Is target visible? = True
+| | Distance to target <= 2.51: REFER
+| | Distance to target > 2.51
+| | | Number of distracting buttons <= 4.67: REFER
+| | | Number of distracting buttons > 4.67: DELAY
+Distance to target > 4.45: DELAY
+\end{verbatim}
+\caption{Decision tree for first reference timing}
+\label{fig:dectree}
+\end{figure}
+
+\section{Chains of references}
