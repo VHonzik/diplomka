@@ -183,7 +183,7 @@ Because REs are the main focus of my research, this section serves as an introdu
 
 Overall, 793 REs were annotated in the manual annotations. Apart from time interval of the reference, several other facts were annotated in the manual annotations. First of all, the target button of each RE was annotated. The count of distinct target buttons is 29.  
 
-REs were also separated into 5 high-level categories depending on what they refer to. The  overview of the categories is in the following list:
+REs were also separated into 5 high-level categories depending on what is the target of the reference. The  overview of the categories is in the following list:
 
 \begin{itemize}
 \item
@@ -213,11 +213,53 @@ Landmark button	& 1.39\\
 Remove button 	& 0.76\\
 \bottomrule
 \end{tabular}
-\caption{Percentage of REs in the groups}
+\caption{Percentage of REs in the categories}
 \label{tab:res-groups}
 \end{table} 
 
-Manual annotations also looked into the contents of the REs.
+Manual annotations also looked into the contents of the REs. It was done through annotating several semantic elements of the REs of the Target category. They are listed in following list and their usage summary is in the table \ref{tab:res-contents}. Please note that these elements are not necessarily exclusive with each other.
+
+\begin{itemize}
+\item
+Type - RE expressed the target object as its type (``button'')
+\item
+One - RE expressed the target object as ``one''
+\item
+Pronoun - RE expressed the target object as a pronoun
+\item
+Color -  RE contained color of the target object
+\item
+Button location - RE contained relative location of the target object to a distracting button
+\item
+Object location - RE contained relative location of the target object to a distracting object (not a button)
+\item 
+IF location - RE contained relative location of the target object to the IF
+\item
+Room location - RE contained relative location of the target object to a room
+\item
+History - RE informed that the target object was already manipulated with
+\end{itemize}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lr}
+\toprule
+Element  & Percentage (\%)  \\
+\midrule
+Type   			& 55.35\\
+Color			& 47.09\\
+One 				& 26.29\\
+Button location & 18.80\\
+Object location 	& 16.67\\
+IF location		& 11.62\\
+Pronoun			& 10.70\\
+History			& 6.88\\
+Room location 	& 5.81\\
+\bottomrule
+\end{tabular}
+\caption{Percentage of REs which contained a semantic element}
+\label{tab:res-contents}
+\end{table} 
 
 \section{Chains of references}
 Interesting phenomenon I have noticed and further explored in the dataset are consecutive references to one button. It can be seen in following sentences: ``Straight ahead of you there on the opposite wall there are two blue buttons. Press the one on the right. The one close to the picture.'' The IG started of with a references to a group of two buttons; the target button being one of those two. In the second sentence he picked out the target button from the group. In the last sentence IG made another reference containing landmark, adding redundant information. Since the references are concerned with one target button and follow each other relatively fast, I have called them chains of references (chains, in short).
