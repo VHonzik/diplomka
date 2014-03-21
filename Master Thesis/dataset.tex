@@ -1,14 +1,17 @@
-\chapter{Dataset}
-In chapter \ref{chap:give-challenge} it was mentioned, that some teams participating in GIVE Challenge tried to use a corpora of a human to human interactions in GIVE scenario. They were learning language expression or decision-making process and applying them in their NLG systems. The teams were however relying on small self-collected datasets. In a light of this, organizers of GIVE Challenge decided they would collect and provide dataset for future use. This chapter serves as an introduction and analysis of this dataset.
+\chapter{The S-GIVE Dataset}
+After GIVE 2.5 instalment presented in Chapter \ref{chap:give-challenge}, the organizers of the GIVE Challenge became interested in spoken communication and therefore decided to collect a new dataset, called the S-GIVE Dataset. This chapter serves as an introduction and analysis of this dataset.
 
 As a side note, \citet{striegnitz2012referring} report on a smaller German dataset, which is similar to the one I will be talking about. 
 
-In the first section, I will introduce the dataset and provide technical details of how it was created. Second section, will, after the fashion of GIVE Challenge look how world and demographic factors influenced the task performance. Next section analyses REs in the dataset. Last section explores a phenomenon of chains of references.
+In the first section, I will introduce the dataset and provide technical details of how it was created. Section \ref{sec:world-demo-factors}, will, after the fashion of GIVE Challenge look how world and demographic factors influenced the task performance. Next section analyses REs in the dataset. Last section explores a phenomenon of chains of references.
 
 \section{General overview}
+\label{sec:general-overview}
+The S-GIVE dataset is different from previous GIVE Challenge experiments because the IG's instructions were of a spoken form. That changes many aspects of the discourse. For one thing, the IG knows when the IF received his instruction, which is not true for the written instructions. That promotes faster feedback and allows interrupting during an instruction. On the other hand, in some cases, the spoken word does not follow grammatical rules. Moreover, interjections are very common, as are incomplete sentences. That makes S-GIVE dataset complicated yet interesting to explore.
+
 The data-collection started in July and finished November of 2012. Through that period 21 interactions between two human subjects were recorded. Originally, 22 pairs participated, but one of the pair failed to finish the tasks and is excluded from the dataset. The subjects were asked to bring someone they know and they were financially compensated for the effort. 
 
-The set-up for the experiment is in the figure \ref{fig:give-experiment-setup}. One human subject was an instruction giver (IG). He is on the right in the figure \ref{fig:give-experiment-setup}. His role was essentially the role of NLG system in GIVE Challenge. He/she was able to see a map of the world, which was updated in real-time and he/she got information about all necessary steps to finish the task. In addition, he was able to see the other's person client screen. He communicated with the other person through a microphone and his goal was to navigate the other person through the world and make him finish the treasure-hunt.
+The set-up for the experiment is in Figure \ref{fig:give-experiment-setup}. One human subject was an instruction giver (IG). He is on the right in Figure \ref{fig:give-experiment-setup}. His role was essentially the role of NLG system in GIVE Challenge. He/she was able to see a map of the world, which was updated in real-time and he/she got information about all necessary steps to finish the task. In addition, he was able to see the other person's client screen. He communicated with the other person through a microphone and his goal was to navigate the other person through the world and make him finish the treasure-hunt.
 
 \begin{figure}[!htbp]
   \centering
@@ -17,9 +20,9 @@ The set-up for the experiment is in the figure \ref{fig:give-experiment-setup}. 
 	\label{fig:give-experiment-setup}
 \end{figure}
 
-The other person was an instruction follower (IF). He/she is on the left in the figure \ref{fig:give-experiment-setup}. He/she interacted with the client and moved the avatar around the world and was able to press buttons. IF listened to IG's instructions through a headset.
+The other person was an instruction follower (IF). He/she is on the left in Figure \ref{fig:give-experiment-setup}. He/she interacted with the client and moved the avatar around the world and was able to press buttons. IF listened to IG's instructions through a headset.
 
-Each pair did one short tutorial world. After that they switched roles of instruction giver and instruction follower. Following was one ``normal'' world randomly chosen from two variants, marked world 1 and world 3 in the dataset. Maps of the worlds 1 and 3 are in the figures \ref{fig:dataset-world1} and \ref{fig:dataset-world3} respectively. Finally they did a difficult version of the other variant (if they started with world 1 the difficult version was for world 3 and vice versa). The difficult versions are marked 1-d and 3-d in the dataset. A difficult version of the world had an increased number of distracting buttons and landmarks compared to the ``normal'' version, as can be seen in the map of world 1-d in figure \ref{fig:dataset-world1d}. If not present in the report or not stated otherwise, the short tutorial worlds are normally excluded from the analysis.
+Each pair did one short tutorial world. After that they switched roles of instruction giver and instruction follower. Following was one ``normal'' world randomly chosen from two variants, marked world 1 and world 3 in the dataset. Maps of the worlds 1 and 3 are in Figures \ref{fig:dataset-world1} and \ref{fig:dataset-world3} respectively. Finally they did a difficult version of the other variant (if they started with world 1 the difficult version was for world 3 and vice versa). The difficult versions are marked 1-d and 3-d in the dataset. A difficult version of the world had an increased number of distracting buttons and landmarks compared to the ``normal'' version, as can be seen in the map of world 1-d in figure \ref{fig:dataset-world1d}. If not present in the report or not stated otherwise, the short tutorial worlds are normally excluded from the analysis.
 
 \begin{figure}[!htbp]
   \centering
@@ -42,9 +45,8 @@ Each pair did one short tutorial world. After that they switched roles of instru
 	\label{fig:dataset-world1d}
 \end{figure}
 
-Similarly to the GIVE Challenge, after all 3 rounds subjects were asked to fill a questionnaire. Its purpose was to get demographic and other relevant information on subjects. The questionnaire can be divided into three parts. First part was only filled out by IF and rated IG and his instruction giving on a scale from 1 to 7. Complete list of its questions follows: 
+Similarly to the GIVE Challenge, after all 3 rounds subjects were asked to fill in a questionnaire. Its purpose was to get demographic and other relevant information on subjects. The questionnaire can be divided into three parts. First part was only filled out by IF and rated IG and his instruction giving on a scale from 1 to 7. Complete list of its questions follows: 
 
-\begin{table}
 \begin{enumerate}
 \item
 Overall, my partner gave me good instructions.
@@ -67,11 +69,10 @@ I would recommend this experiment to a friend.
 \item
 My partner's instructions were not repetitive.
 \end{enumerate}
-\end{table}
 
-Second part was filled by both IF and IG and was concerned with their navigation skills. To measure the ability to navigate in the world the Santa Barbara Sense of Direction (SBSOD) scores were used \citet{hegarty2002development}. Again the questions were on a scale from 1 to 7. Note that some of the question in the following list are of positive nature (higher rating equals better navigation skill) while other are of negative nature, therefore these scores had to be normalized.
 
-\begin{table}
+Second part was filled by both IF and IG and was concerned with their navigation skills. To measure the ability to navigate in the world the Santa Barbara Sense of Direction (SBSOD) scores were used \citep{hegarty2002development}. Again the questions were on a scale from 1 to 7. Note that some of the question in the following list are of positive nature (higher rating equals better navigation skill) while other are of negative nature, therefore these scores had to be normalized.
+
 \begin{enumerate}
 \item
 I am very good at giving directions.
@@ -103,11 +104,10 @@ I can usually remember a new route after I have travelled it only once.
 \item
 I don't have a very good "mental map" of my environment.
 \end{enumerate}
-\end{table}
+
 
 Finally, the last part of the questionnaire was of a demographic character. We can see questions about age, gender, language and computer expertise, 3D games experience and knowledge of the partner in following list.
 
-\begin{table}
 \begin{enumerate}
 \item
 What is your age?
@@ -134,19 +134,18 @@ Have you worked collaboratively with the second participant before? (For example
 \item
 Have you played 3D computer games with the second participant before?
 \end{enumerate}
-\end{table}
 
 Many of these questions are explored in the next section as a potential factors influencing the task performance. 
 
-As was mentioned in chapter \ref{chap:give-challenge}, the entire session is logged to the database. The player's position, orientation and all visible objects are logged at fixed rate. Moreover, other information as buttons presses or an end of the session are also stored in the logs. Because the worlds are static, distances and angles between player and other game's objects are easily computed from these logs.
+As was mentioned in Chapter \ref{chap:give-challenge}, the entire session is logged to a database. The player's position, orientation and all visible objects are logged at a fixed rate. Moreover, other information as buttons presses or an end of the session are also stored in the logs. Because the worlds are static, distances and angles between player and other game's objects are easily computed from these logs.
 
-Apart from logs, there are of course sound files of IG giving directions. These were transcribed and together with some information from the logs transformed into ELAN files. ELAN is an annotation software \citep{sloetjes2008annotation}. I will use the term automatic annotations for the ELAN files created from logs and transcribed audio. 
+Apart from logs, there are of course sound files of the IG giving directions. These were transcribed and together with some information from the logs transformed into ELAN files. ELAN is an annotation software \citep{sloetjes2008annotation}. I will use the term \textit{automatic annotations} for the ELAN files created from logs and transcribed audio. 
 
-Building on top of these automatic annotations are manual annotations. They are primarily concerned with referring expressions and also stored in ELAN format. Most referring expressions in GIVE aim to locate a button, which needs to be pressed. I will call the button, which is a goal of an referring expression, the target button. Which button is the target button of a reference is one of the layers in the manual annotations. Another layer of the annotations is some basic grouping of the references. Whether it is a reference to a single button, to a group of button, to a landmark and so on. Third layer looks deeper into the contents of the reference. It notes whether the reference contains for example the color of a button, whether distractors or landmarks are part of the reference or whether the reference explicitly points out that the button was already pressed before.
+Building on top of these automatic annotations are manual annotations. They are primarily concerned with referring expressions and also stored in ELAN format. Most referring expressions in GIVE aim to locate a button, which needs to be pressed. I will call the button, which is a goal of a referring expression, the target button. Which button is the target button of a reference is one of the layers in the manual annotations. Another layer of the annotations is some basic grouping of the references. Whether it is a reference to a single button, to a group of button, to a landmark and so on. The third layer looks deeper into the contents of the reference. It notes whether the reference contains for example the color of a button, whether distractors or landmarks are part of the reference or whether the reference explicitly points out that the button was already pressed before.
 
-Previously mentioned logs, automatic annotations and manual annotations together form the dataset this chapter is dealing with.
+The previously mentioned logs, automatic annotations and manual annotations together form the dataset this chapter is dealing with.
 
-An example of what can be extracted from the data is in the following text. Spatial information are transcribed in parentheses for the sake of clearness.
+An example of interaction between IF and IG is in the following text. Spatial information are transcribed in parentheses for the sake of clearness.
 
 \begin{verse}
 (IF enters a room)\\
@@ -162,26 +161,147 @@ IG: Press it.\\
 \end{verse}
 
 \section{World and Demographic factors}
-As was noted repeatedly in the chapter \ref{chap:give-challenge}, the world had significant influence on the task success rate in GIVE Challenge. However the dataset was created in a different manner, so the question about influence of worlds must be reformulated. First of all, all the sessions were successful except for a one which was discarded. Therefore, the task success rate no longer makes sense. Instead, I will measure task performance by time required to finish the task (duration) and also use other performance measure when appropriate. Secondly, the normal worlds were designed to have the same or similar difficulty in order to minimize effects outside of navigation strategy. Same idea goes with the difficult worlds.
+\label{sec:world-demo-factors}
+As was noted repeatedly in Chapter \ref{chap:give-challenge}, the world had significant influence on the task success rate in GIVE Challenge. However in the GIVE Challenge the worlds were designed to be of a different difficulty, whereas in the S-GIVE dataset they were designed to be similar in terms of the difficulty to minimize effects outside of navigation strategy. In addition, all the sessions were successful except for one which was discarded. The question about influence of worlds must be reformulated, since the task success rate no longer makes sense. Instead, I will measure task performance by time required to finish the task (duration) and also use other performance measure when appropriate.
 
-Despite the design choices, I found out that the normal worlds 1 and 3, had a different mean duration (p-value $0.0473$ for two-sample t-test). There are multiple explanation for this difference. Relatively small number of subjects is certainly one of them. We can also notice in the figure \ref{fig:dataset-world3} slightly complicated system of hallways in the center of world-3. But this discovery does not have major influence on my work. Moreover, the difficult world did not have significant difference between their mean duration (p-value $0.6195$ for two-sample t-test).
+Despite the design choices, I found out that the normal worlds 1 and 3, had a different mean duration (p-value $0.0473$ for unpaired two-sample t-test). There are multiple explanation for this difference. Relatively small number of subjects is certainly one of them. We can also notice in the figure \ref{fig:dataset-world3} slightly complicated system of hallways in the center of world-3. But this discovery does not have major influence on my work. Moreover, the difficult world did not have significant difference between their mean duration (p-value $0.6195$ for unpaired two-sample t-test).
 
-Another thing I was interested in was influence of gaming experience of both participants on certain performance measures, namely on the duration, on the average speed of IF movement and the time IF spent moving. The average speed of IF is simply a total distance the avatar controller by IF travelled in a session divided by duration. The time IF spent moving aggregates time where avatar was either motionless or only rotating in place. 
+Another thing I was interested in was the influence of gaming experience of both participants on certain performance measures, namely on the duration, on the average speed of IF movement and the time the IF spent moving. The average speed of IF is simply a total distance the avatar controller by IF travelled in a session divided by duration. The time IF spent moving aggregates time where avatar was either motionless or only rotating in place. 
 
-I found correlations between gaming experiences and these variables. Not surprisingly, these correlation are especially high for IF, since he/she is the one who is actually playing the world. The past gaming experience (questions 7 in third part of the questionnaire) are more important than contemporary playing (question 6 in the third part of the questionnaire). Most prominent are the hours per week spent playing of IF at the past peak gaming period (question 7), the same variable for IG and hours spent gaming per week for IF at present (question 6). For the difficult worlds some correlations change slightly. In general, individuals who are familiar with games (gamers) take less time to finish the world, they spent more time moving and they have higher speed.
+I found correlations between gaming experiences and these variables. Table \ref{tab:demfactors-gaming} shows the correlation matrix between gaming experience questions and performance measure.  Not surprisingly, these correlation are especially high for the IF, since he/she is the one who is actually playing the world. The past gaming experience (questions 7 in third part of the questionnaire) is more important than contemporary playing (question 6 in the third part of the questionnaire). Most prominent are the familiarity of IF with 3D games (question 5),  the IF hours per week spent playing games at the past peak gaming period (question 7), the same variable for IG and hours spent gaming per week for IF at present (question 6). For the difficult worlds some correlations change slightly. IF's gaming at past peak period has much weaker correlation with duration here. In general, individuals who are familiar with games (gamers) take less time to finish the world, they spent more time moving and they have higher speed.
 
-The influence of SBSOD scores (second part of the questionnaire) on the task proficiency was another thing I have looked at. Correlation matrix revealed weak or almost no correlation between SBSOD scores and time needed to complete the world.
+\begin{table}[h!]
+\centering
+\begin{tabular}{llccc}
+\toprule
+World & Question  & Duration & Speed & Time moving  \\
+\midrule
+Normal 	& IF hours/week peak gaming (7) 	& -0.411 &	0.486 &	0.428\\
+ 		& IF hours/week now 	(6)			& -0.366	 & 	0.338 &	0.255\\
+ 		& IF familiarity 3D games (5)	& -0.590	 &	0.720 &	0.664\\
+ 		& IG hours/week peak gaming (7) 	& -0.359 &	0.450 &	0.435\\
+ 		& IG hours/week now 	(6)			& 0.079	 &	0.155 &	0.180\\
+ 		& IG familiarity 3D games (5)	& -0.230 &	0.221 &	0.224\\
+\midrule
+Difficult& IF hours/week peak gaming (7) & 0.111 &	0.199 &	0.135\\
+ 		& IF hours/week now (6)			& -0.388 &	0.312 &	0.233\\
+ 		& IF familiarity 3D games (5)	& -0.478 &	0.569 &	0.520\\
+ 		& IG hours/week peak gaming (7) 	& -0.287 &	0.715 &	0.715\\
+ 		& IG hours/week now (6)			& 0.149 &	0.348 &	0.420\\
+ 		& IG familiarity 3D games (5)	& 0.009 &	0.403 &	0.473\\
+\bottomrule
+\end{tabular}
+\caption{Correlation matrix of gaming experiences and performance measures}
+\label{tab:demfactors-gaming}
+\end{table}
 
-The data suggest that there is positive correlation between male gender and task proficiency measured in the duration. The effect of male IG diminishes in the difficult worlds but the effect of IF is even stronger in the difficult worlds. However there are several facts to take in consideration here. First of all, we don't have enough data to have a statistically significant conclusion. This correlation might have also been caused by having more male gamers than female gamers. Lastly, there has been research about influence of gender on spatial cognition and mental rotation; an example of more recent one is \citep{geary2000sex}. They conclude that males are more proficient in tasks requiring mental rotation. Since IG have to do mental rotation while giving direction in GIVE scenario, this might be a source of correlation. Another paper worth considering on this topic is \citep{moffat1998navigation}, which found a gender difference in time required to finish a virtual maze.
+The influence of SBSOD scores (second part of the questionnaire) on the task proficiency was another thing I have looked at. A correlation matrix revealed weak or almost no correlation between SBSOD scores and the time needed to complete the world, as can be seen in Table \ref{tab:demfactors-sbsod}. In the difficult worlds, however, the correlation became slightly stronger.
 
-The age of IF have positive correlation with task proficiency measured in the duration and in difficult worlds this correlation is one the strongest ones: 0.6. Older IF are also moving less and are generally slower. For IG the correlations have the same direction, however they are much weaker.
+\begin{table}[h!]
+\centering
+\begin{tabular}{llc}
+\toprule
+ World & Role   & Duration \\
+\midrule
+Normal & IF &	-0.085\\
+ & IG &	-0.082\\
+\midrule
+Difficult & IF & 0.162\\
+ & IG &	-0.210\\
+\bottomrule
+\end{tabular}
+\caption{Correlation between SBSOD scores and duration}
+\label{tab:demfactors-sbsod}
+\end{table}
 
-Lastly I was interested how familiarity of participants with each other (questions 9-12 in the third part) influenced the task performance. The knowledge of the partner had an impact on the task efficiency. What was interesting is that, previous cooperation with the partner became much more important for the difficult worlds, while not having much impact in normal worlds. One interpretation is, of course, faster learning for pairs familiar with each others. Other one might be that in the normal worlds the referring expressions are relatively simple and does not leave much space for errors. On the other hand in the difficult worlds familiarity reduce chances of misinterpretation of complex expressions.
+The data suggest that there is positive correlation between male gender and task proficiency measured as duration. Table \ref{tab:demfactors-gender} shows these correlations. The effect of male IG diminishes in the difficult worlds but the effect of IF is even stronger in the difficult worlds. However there are several facts to take in consideration here. First of all, we don't have enough data to have a statistically significant conclusion. This correlation might have also been caused by having more male gamers than female gamers. In fact, Table \ref{tab:demfactors-gender-fam} suggest so. Lastly, there has been research about influence of gender on spatial cognition and mental rotation; an example of more recent one is \citep{geary2000sex}. They conclude that males are more proficient in tasks requiring mental rotation. Since the IGs have to do mental rotation while giving direction in GIVE scenario, this might be a source of the correlation. Another paper worth considering on this topic is \citep{moffat1998navigation}, which found a gender difference in time required to finish a virtual maze.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{llc}
+\toprule
+ World & Role   & Duration \\
+\midrule
+Normal & IF &	-0.234\\
+ & IG &	-0.277\\
+\midrule
+Difficult & IF & -0.349\\
+ & IG &	-0.106\\
+\bottomrule
+\end{tabular}
+\caption{Correlation between male gender and duration}
+\label{tab:demfactors-gender}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Role    & Familiarity with 3D games \\
+\midrule
+ IF &	 0.341\\
+ IG &	0.661\\
+\bottomrule
+\end{tabular}
+\caption{Correlation between male gender and familiarity with 3D games}
+\label{tab:demfactors-gender-fam}
+\end{table}
+
+
+Table \ref{tab:demfactors-age} shows correlation matrix for age. The age of IF have positive correlation with task proficiency measured in the duration and in difficult worlds this correlation is one the strongest ones. Older IF are also moving less and are generally slower. For IG the correlations have the same direction, however they are much weaker.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{llccc}
+\toprule
+World & Role  & Duration & Speed & Time moving  \\
+\midrule
+Normal 	& IF & 0.175 & -0.467 & -0.448\\
+ 		& IG & 0.275 & -0.098 & -0.125\\
+\midrule
+Difficult& IF & 0.614 &	-0.275 &-0.196\\
+ 		& IG  & 0.016 &	-0.217 &-0.232\\
+\bottomrule
+\end{tabular}
+\caption{Correlation matrix of age and performance measures}
+\label{tab:demfactors-age}
+\end{table}
+
+Lastly I was interested how familiarity of participants with each other (questions 9-12 in the third part) influenced the task performance. Table \ref{tab:demfactors-famother} shows, that the knowledge of the partner had a positive impact on the task efficiency. The most correlated question was question 10, how well they know each other.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{llc}
+\toprule
+World & Question  & Duration \\
+\midrule
+Normal 	& IF Co-players in past (12) 	& -0.038\\
+ 		& IF Collaborative work 	(11)		& 0.109	 \\
+ 		& IF how well know each other (10)		& 0.529\\
+ 		& IF know each other (9)			& 0.164	\\
+ 		& IG Co-players in past (12) 	& -0.124\\
+ 		& IG Collaborative work 	(11)		& 0.189	 \\
+ 		& IG how well know each other (10)		& 0.420\\
+ 		& IG know each other (9)			& 0.177	\\
+\midrule
+Difficult& IF Co-players in past (12) 	& -0.078\\
+ 		& IF Collaborative work 	(11)		& 0.170	 \\
+  		& IF how well know each other (10)		& 0.437\\
+ 		& IF know each other (9)			& 0.247	\\
+ 		& IG Co-players in past (12) 	& 0.291\\
+ 		& IG Collaborative work 	(11)		& 0.245	 \\
+ 		& IG how well know each other (10)		& 0.361\\
+ 		& IG know each other (9)			& 0.189	\\
+\bottomrule
+\end{tabular}
+\caption{Correlation between participants familiarity and duration}
+\label{tab:demfactors-famother}
+\end{table}
 
 \section{Referring expressions}
-Because REs are the main focus of my research, this section serves as an introductory analysis of REs in my dataset.
+Because REs are the main focus of my research, this section serves as an introductory analysis of REs in the S-GIVE dataset.
 
-Overall, 793 REs were annotated in the manual annotations. Apart from time interval of the reference, several other facts were annotated in the manual annotations. First of all, the target button of each RE was annotated. The count of distinct target buttons is 29.  
+Overall, 793 REs were annotated in the manual annotations. Apart from time interval of the reference, several other facts were annotated in the manual annotations, as was mentioned in Section \ref{sec:general-overview}. First of all, the target button of each RE was annotated. The count of distinct target buttons is 29.  
 
 REs were also separated into 5 high-level categories depending on what is the target of the reference. The  overview of the categories is in the following list:
 
@@ -198,7 +318,7 @@ Landmark button - Referring to a distractor button as a landmark
 Remove button -  Referring to a distractor button to exclude it
 \end{itemize}
 
-Percentage count of the categories is in the table \ref{tab:res-groups}. References to target button are a dominant category. Around 10\% of references are group references. References to landmarks occupy only 6\% of all references.
+Percentage count of the categories is in Table \ref{tab:res-groups}. References to target button are a dominant category. Around 10\% of references are group references. References to landmarks occupy only 6\% of all references.
 
 \begin{table}[h!]
 \centering
@@ -217,7 +337,7 @@ Remove button 	& 0.76\\
 \label{tab:res-groups}
 \end{table} 
 
-Manual annotations also looked into the contents of the REs. It was done through annotating several semantic elements of the REs of the Target category. They are listed in following list and their usage summary is in the table \ref{tab:res-contents}. Please note that these elements are not necessarily exclusive with each other.
+Another layer of manual annotations looked into the contents of the REs. It was done through annotating several semantic elements of the REs of the Target category. They are listed in following list and their usage is summarised in Table \ref{tab:res-contents}. Please note that these elements are not necessarily exclusive with each other.
 
 \begin{itemize}
 \item
@@ -284,7 +404,7 @@ When a group of buttons is utilized in RE and the target button is part of that 
 
 When IF has clearly chosen the wrong button, IG will try to correct that error. I call that an error function. Following extract features this function: ``That blue button. No no no. The other. That one.''
 
-Summary of the functions is in the table \ref{tab:chains-functions}. Please note that these functions are not exclusive. One chain can have both confirmation and specification function.
+Summary of the functions is in Table \ref{tab:chains-functions}. Please note that these functions are not exclusive. One chain can have both confirmation and specification function.
 
 \begin{table}[h!]
 \centering

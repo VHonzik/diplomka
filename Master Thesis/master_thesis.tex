@@ -1,92 +1,86 @@
-\documentclass[a4paper,12pt]{report}
-\usepackage[english]{babel}      % èesky psaná práce
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[english]{babel}      % Äesky psanÃ¡ prÃ¡ce
 \usepackage[T1]{fontenc}
-\usepackage[cp1250]{inputenc}  % vstupní znaková sada: Windows 1250
+\usepackage[utf8]{inputenc} % vstupnÃ­ znakovÃ¡ sada: Windows 1250
+\usepackage[a4paper, hmarginratio=3:2]{geometry}
 
-%\usepackage{epsfig} % balíèky pro vkládání grafickıch souborù typu EPS
-\usepackage{amsmath} % balíèek pro pokroèilou matem. sazbu
+\usepackage{amsmath} % balÃ­Äek pro pokroÄilou matem. sazbu
 \usepackage{amsthm}
 \usepackage{amsfonts}
-%\usepackage{cite}
 \usepackage{fixltx2e}
-%\usepackage{multirow}
 \usepackage{rotating}
 \usepackage{url}
 \usepackage{epstopdf}
 \usepackage{lscape}
 \usepackage[round]{natbib}
 \usepackage{booktabs}
+\usepackage{graphicx}
 
-\oddsidemargin=10mm   % levı okraj vìtší (kvùli vazbì)
-\topmargin=-15mm      % horní okraj trochu menší
-\textwidth=150mm      % šíøka textu na stránce
-\textheight=240mm     % "vıška" textu na stránce
+\topmargin=-15mm      % hornÃ­ okraj trochu menÅ¡Ã­
+\textwidth=150mm      % Å¡Ã­Å™ka textu na strÃ¡nce
+\textheight=240mm     % "vÃ½Å¡ka" textu na strÃ¡nce
 
-\pagenumbering{arabic} % èíslování stránek arabskımi èíslicemi
-\pagestyle{plain}      % stránky èíslované dole uprostøed
+\pagenumbering{arabic} % ÄÃ­slovÃ¡nÃ­ strÃ¡nek arabskÃ½mi ÄÃ­slicemi
+\pagestyle{plain}      % strÃ¡nky ÄÃ­slovanÃ© dole uprostÅ™ed
 
-\parindent=0pt % odsazení 1. øádku odstavce
+\parindent=0pt % odsazenÃ­ 1. Å™Ã¡dku odstavce
 \parskip=7pt   % mezera mezi odstavci
-\frenchspacing % aktivuje pouití nìkterıch èeskıch typografickıch pravidel
+\frenchspacing % aktivuje pouÅ¾itÃ­ nÄ›kterÃ½ch ÄeskÃ½ch typografickÃ½ch pravidel
 
-% definice makra pro èeské uvozovky:
-\def\bq{\mbox{\kern.1ex\protect\raisebox{-1.3ex}[0pt][0pt]{''}\kern-.1ex}}
-\def\eq{\mbox{\kern-.1ex``\kern.1ex}}
-\def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax }%
-\ifundefined{uv}%
-        \gdef\uv#1{\bq #1\eq}
-\fi
-% konec .... pouití makra pro psaní èeskı uvozovek: \uv{text uvnitø uvozovek}
+\newcommand{\ti}{\textit} %zkrÃ¡cenÃ½ pÅ™Ã­kaz pro kurzÃ­vu
+\newcommand{\tb}{\textbf} %zkrÃ¡cenÃ½ pÅ™Ã­kaz pro tuÄnÃ©
 
 
-%%%%%%%%%%%%%%%%%%%%%% zde jsou zavedeny nìkteré "konstanty" - mùete, resp. musíte je ZMÌNIT %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% zde jsou zavedeny nÄ›kterÃ© "konstanty" - mÅ¯Å¾ete, resp. musÃ­te je ZMÄšNIT %%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\cvut}{Czech Technical University}
 \newcommand{\fjfi}{Faculty of Nuclear Sciences and Physical Engineering}
 \newcommand{\kse}{Department of Software Engineering}
 \newcommand{\obor}{Engineering Informatics}
 \newcommand{\zamereni}{Applied Software Engineering}
 
-\newcommand{\nazevcz}{Navigování ve virtuálním svìtì}        % zde VYPLÒTE èeskı název práce (pøesnì podle zadání!)
-\newcommand{\nazeven}{Navigation in virtual environment}     % zde VYPLÒTE anglickı název práce (pøesnì podle zadání!)
-\newcommand{\autor}{Václav Honzík}           % zde VYPLÒTE své jméno a pøíjmení
-\newcommand{\rok}{2013}                % zde VYPLÒTE rok odevzdání, napø. 2006
-\newcommand{\vedouci}{Doc. Ing. Zdenìk abokrtskı, Ph.D.}         % zde VYPLÒTE jméno a pøíjmení vedoucího práce, vèetnì titulù
-                                                               % napø. Doc. Ing. Ivo Malı, Ph.D.
+\newcommand{\nazevcz}{NavigovÃ¡nÃ­ ve virtuÃ¡lnÃ­m svÄ›tÄ›}        % zde VYPLÅ‡TE ÄeskÃ½ nÃ¡zev prÃ¡ce (pÅ™esnÄ› podle zadÃ¡nÃ­!)
+\newcommand{\nazeven}{Navigation in virtual environment}     % zde VYPLÅ‡TE anglickÃ½ nÃ¡zev prÃ¡ce (pÅ™esnÄ› podle zadÃ¡nÃ­!)
+\newcommand{\autor}{VÃ¡clav HonzÃ­k}           % zde VYPLÅ‡TE svÃ© jmÃ©no a pÅ™Ã­jmenÃ­
+\newcommand{\rok}{2013}                % zde VYPLÅ‡TE rok odevzdÃ¡nÃ­, napÅ™. 2006
+\newcommand{\vedouci}{Doc. Ing. ZdenÄ›k Å½abokrtskÃ½, Ph.D.}         % zde VYPLÅ‡TE jmÃ©no a pÅ™Ã­jmenÃ­ vedoucÃ­ho prÃ¡ce, vÄetnÄ› titulÅ¯
+                                                               % napÅ™. Doc. Ing. Ivo MalÃ½, Ph.D.
 \newcommand{\pracovisteVed}{Institute of Formal and Applied Linguistic, Faculty of
-Mathematics and Physics, Charles University in Prague} % zde VYPLÒTE pracovištì vedoucího práce, je-li jiné ne KSE FJFI ÈVUT
+Mathematics and Physics, Charles University in Prague} % zde VYPLÅ‡TE pracoviÅ¡tÄ› vedoucÃ­ho prÃ¡ce, je-li jinÃ© neÅ¾ KSE FJFI ÄŒVUT
 
-\newcommand{\konzultant}{Prof. Kristina Striegnitz, Ph.D.} % POKUD MÁTE urèeného konzultanta, NAPIŠTE jeho jméno a pøíjmení
-\newcommand{\pracovisteKonz}{Union College, Schenectady USA} % POKUD MÁTE konzultanta, NAPIŠTE jeho pracovištì
+\newcommand{\konzultant}{Prof. Kristina Striegnitz, Ph.D.} % POKUD MÃTE urÄenÃ©ho konzultanta, NAPIÅ TE jeho jmÃ©no a pÅ™Ã­jmenÃ­
+\newcommand{\pracovisteKonz}{Union College, Schenectady USA} % POKUD MÃTE konzultanta, NAPIÅ TE jeho pracoviÅ¡tÄ›
 
 
-\newcommand{\klicova}{keywords cz}   % zde NAPIŠTE èesky max. 5 klíèovıch slov
-\newcommand{\keyword}{keywords en}       % zde NAPIŠTE anglicky max. 5 klíèovıch slov (pøelote z èeštiny)
-\newcommand{\abstrCZ}{abstract cz} % zde NAPIŠTE abstrakt v èeštinì
-\newcommand{\abstrEN}{abstract en}                  % zde NAPIŠTE abstrakt v angliètinì
+\newcommand{\klicova}{keywords cz}   % zde NAPIÅ TE Äesky max. 5 klÃ­ÄovÃ½ch slov
+\newcommand{\keyword}{keywords en}       % zde NAPIÅ TE anglicky max. 5 klÃ­ÄovÃ½ch slov (pÅ™eloÅ¾te z ÄeÅ¡tiny)
+\newcommand{\abstrCZ}{abstract cz} % zde NAPIÅ TE abstrakt v ÄeÅ¡tinÄ›
+\newcommand{\abstrEN}{abstract en}                  % zde NAPIÅ TE abstrakt v angliÄtinÄ›
 
 \begin{document}
 
 
-%%%%%%%%%%%%%%%%%%%%%% 1. strana -- na následujících 30 øádkù NESAHEJTE!!!  Generuje se AUTOMATICKY %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% 1. strana -- na nÃ¡sledujÃ­cÃ­ch 30 Å™Ã¡dkÅ¯ NESAHEJTE!!!  Generuje se AUTOMATICKY %%%%%%%%%%%%%%%%%%%%%%
 \thispagestyle{empty}
 
 \begin{center}
-    {\Large \bf \cvut\\[2mm] \fjfi }
+    {\Large \textsc{\cvut}\\[1.5ex] \textsc{\fjfi}}\\
     \vspace{10mm}
-
+    
     \begin{tabular}{c}
-    {\bf \kse}\\
-    {\bf Field: \obor}\\
-    {\bf Specialization: \zamereni}
+	    {\bf \kse}\\   
+      {\bf Field: \obor}\\
     \end{tabular}
 
-   % logo CVUT -- pokud jej nechcete pouít, zakomentujte následující øádek a odkomentujte øádek pod ním:
+
+   % logo CVUT -- pokud jej nechcete pouÅ¾Ã­t, zakomentujte nÃ¡sledujÃ­cÃ­ Å™Ã¡dek a odkomentujte Å™Ã¡dek pod nÃ­m:
    %\vspace{10mm} \epsfysize=25mm \epsffile{cvut-logo-bw} \vspace{15mm}
    \vspace{10mm} \includegraphics[height=25mm]{cvut-logo-bw} \vspace{15mm}
  
    %\vspace{50mm}
 
-   {\Huge \bf \nazeven\par \nazevcz\par}
+   {\huge \bf \nazeven}\\
+   \vspace{5mm}   
+   {\huge \bf \nazevcz}
    %{\Huge \bf \nazeven\par}
 
    \vspace{15mm}
@@ -102,21 +96,21 @@ Mathematics and Physics, Charles University in Prague} % zde VYPLÒTE pracovištì 
    }
 \end{center}
 
-%%%%%%%%%%%%%%%%%%%%%% 2. strana: zadání práce  %%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%            Pøed svázáním namísto této strany VLOÍTE zadání podepsané dìkanem!
+%%%%%%%%%%%%%%%%%%%%%% 2. strana: zadÃ¡nÃ­ prÃ¡ce  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%            PÅ™ed svÃ¡zÃ¡nÃ­m namÃ­sto tÃ©to strany VLOÅ½ÃTE zadÃ¡nÃ­ podepsanÃ© dÄ›kanem!
 \newpage  % SEM NESAHEJTE!
 \thispagestyle{empty} Insert assignment instead of this page before handing in the thesis!!!!
 
-%%%%%%%%%%%%%%%%%%%%%% 3. strana: prohlášení -- ENY UPRAVÍ minulı èas sloves %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% 3. strana: prohlÃ¡Å¡enÃ­ -- Å½ENY UPRAVÃ minulÃ½ Äas sloves %%%%%%%%%%%%%%%%%%%%%%
 \newpage % SEM NESAHEJTE!
 \thispagestyle{empty}  % SEM NESAHEJTE!
 
 ~ % SEM NESAHEJTE!
-\vfill % prázdné místo. SEM NESAHEJTE!
+\vfill % prÃ¡zdnÃ© mÃ­sto. SEM NESAHEJTE!
 
 {\bf Declaration} % SEM NESAHEJTE!
 
-\vspace{0.5cm} % vertikální mezera. SEM NESAHEJTE!
+\vspace{0.5cm} % vertikÃ¡lnÃ­ mezera. SEM NESAHEJTE!
 I declare, that I have developed my master thesis independently and used only the materials (literature, projects, SW etc.) listed in attached list.
 
 \vspace{5mm}In Prague on ..................\hfill  % SEM NESAHEJTE!
@@ -127,28 +121,28 @@ I declare, that I have developed my master thesis independently and used only th
 
 
 
-%%%%%%%%%%%%%%%%%%%%%% 4. strana: podìkování -- UPRAVTE JMÉNO, resp. tuto stránku celou VYMATE %%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%                           (podìkování nemusí bıt uvedeno vùbec)
+%%%%%%%%%%%%%%%%%%%%%% 4. strana: podÄ›kovÃ¡nÃ­ -- UPRAVTE JMÃ‰NO, resp. tuto strÃ¡nku celou VYMAÅ½TE %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%                           (podÄ›kovÃ¡nÃ­ nemusÃ­ bÃ½t uvedeno vÅ¯bec)
 \newpage
 \thispagestyle{empty}
 
 ~
-\vfill % prázdné místo
+\vfill % prÃ¡zdnÃ© mÃ­sto
 
 {\bf Acknowledgment}
 
-\vspace{5mm} % vertikální mezera
+\vspace{5mm} % vertikÃ¡lnÃ­ mezera
 I would like to thank \vedouci for supervising and shaping my master thesis. I would like to also thank \konzultant for giving me the opportunity and helping me with my master thesis.
 
 \begin{flushright}
 \autor
-\end{flushright}  % <------- tady konèí stránka s podìkováním
+\end{flushright}  % <------- tady konÄÃ­ strÃ¡nka s podÄ›kovÃ¡nÃ­m
 
 %%%%%%%%%%%%%%%%%%%%% 5.strana: abstrakt %%%%%%%%%%%%%%%%%%%%%
 \newpage   % SEM NESAHEJTE!
 \thispagestyle{empty}   % SEM NESAHEJTE!
 
-% pøíprava:    (na následujících 8 øádkù NESAHEJTE!)
+% pÅ™Ã­prava:    (na nÃ¡sledujÃ­cÃ­ch 8 Å™Ã¡dkÅ¯ NESAHEJTE!)
 \newbox\odstavecbox
 \newlength\vyskaodstavce
 \newcommand\odstavec[2]{%
@@ -156,9 +150,9 @@ I would like to thank \vedouci for supervising and shaping my master thesis. I w
          \parbox[t]{#1}{#2\vrule width 0pt depth 4pt}}%
     \global\vyskaodstavce=\dp\odstavecbox
     \box\odstavecbox}
-\newcommand{\delka}{120mm} % šíøka textù ve 2. sloupci tabulky
+\newcommand{\delka}{120mm} % Å¡Ã­Å™ka textÅ¯ ve 2. sloupci tabulky
 
-% pouití pøípravy:    % dovnitø "tabular" vùbec NESAHEJTE!
+% pouÅ¾itÃ­ pÅ™Ã­pravy:    % dovnitÅ™ "tabular" vÅ¯bec NESAHEJTE!
 \begin{tabular}{ll}
   {\em Title:} & ~ \\
   \multicolumn{2}{l}{\odstavec{\textwidth}{\bf \nazeven}} \\[5mm]
@@ -170,32 +164,32 @@ I would like to thank \vedouci for supervising and shaping my master thesis. I w
   \multicolumn{2}{l}{\odstavec{\textwidth}{{\em Abstract:} ~ \abstrEN \\ }} \\[5mm]
   {\em Key words:} & \odstavec{\delka}{\keyword} \\[20mm]
 
-  {\em Název práce:} & ~\\
+  {\em NÃ¡zev prÃ¡ce:} & ~\\
   \multicolumn{2}{l}{\odstavec{\textwidth}{\bf \nazevcz}}\\[5mm]
   {\em Autor:} & \autor \\[5mm]
-  {\em Obor:} & Inenırská Informatika \\
-  {\em Typ práce:} & Diplomová práce \\[5mm]
-  {\em Vedoucí:} & \odstavec{\delka}{\vedouci \\ \pracovisteVed} \\[5mm]
+  {\em Obor:} & InÅ¾enÃ½rskÃ¡ Informatika \\
+  {\em Typ prÃ¡ce:} & DiplomovÃ¡ prÃ¡ce \\[5mm]
+  {\em VedoucÃ­:} & \odstavec{\delka}{\vedouci \\ \pracovisteVed} \\[5mm]
   {\em Konzultant:} & \odstavec{\delka}{\konzultant \\ \pracovisteKonz} \\[5mm]
   \multicolumn{2}{l}{\odstavec{\textwidth}{{\em Abstrakt:} ~ \abstrCZ \\ }} \\[5mm]
-  {\em Klíèová slova:} & \odstavec{\delka}{\klicova}
+  {\em KlÃ­ÄovÃ¡ slova:} & \odstavec{\delka}{\klicova}
 \end{tabular}
 
 
-%%%%%%%%%%%%%%%%%%%%%% 6. strana: obsah práce ... je generován AUTOMATICKY %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% 6. strana: obsah prÃ¡ce ... je generovÃ¡n AUTOMATICKY %%%%%%%%%%%%%%%%%%%%%%
 \newpage  % SEM NESAHEJTE!
 \tableofcontents % SEM NESAHEJTE!
 
 
-%%%%%%%%%%%%%%%%%%%%%%  7.strana: zde zaèíná SAMOTNÁ PRÁCE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                 - text se vkládá Z EXTERNÍCH SOUBORÙ
-%                                   (mùete ho také napsat pøímo sem => smate kadé \input{...})
+%%%%%%%%%%%%%%%%%%%%%%  7.strana: zde zaÄÃ­nÃ¡ SAMOTNÃ PRÃCE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                 - text se vklÃ¡dÃ¡ Z EXTERNÃCH SOUBORÅ®
+%                                   (mÅ¯Å¾ete ho takÃ© napsat pÅ™Ã­mo sem => smaÅ¾te kaÅ¾dÃ© \input{...})
 \newpage % SEM NESAHEJTE!
 
 \chapter*{Introduction} \addcontentsline{toc}{chapter}{Introduction} % SEM NESAHEJTE!
-%\input{uvod.tex}  % text úvodu (bez nadpisu) je vkládán z jiného souboru; lze upravit jméno souboru, resp. smazat tento øádek a text úvodu napsat pøímo sem (ale znepøehlední se to)
+%\input{uvod.tex}  % text Ãºvodu (bez nadpisu) je vklÃ¡dÃ¡n z jinÃ©ho souboru; lze upravit jmÃ©no souboru, resp. smazat tento Å™Ã¡dek a text Ãºvodu napsat pÅ™Ã­mo sem (ale znepÅ™ehlednÃ­ se to)
 
-% Následují texty kapitol. Smaete-li následující øádky (text chcete psát pøímo sem), nezapomeòte na CHAPTER!!!
+% NÃ¡sledujÃ­ texty kapitol. SmaÅ¾ete-li nÃ¡sledujÃ­cÃ­ Å™Ã¡dky (text chcete psÃ¡t pÅ™Ã­mo sem), nezapomeÅˆte na CHAPTER!!!
 %\input{navigation.tex}
 %\input{refexpr.tex}
 \input{bground.tex}
@@ -204,12 +198,12 @@ I would like to thank \vedouci for supervising and shaping my master thesis. I w
 \input{ml.tex}
 
 \chapter*{Conclusion} \addcontentsline{toc}{chapter}{Conclusion}   % SEM NESAHEJTE!
-%\input{zaver.tex}  % Závìr, je vkládán z jiného souboru
+%\input{zaver.tex}  % ZÃ¡vÄ›r, je vklÃ¡dÃ¡n z jinÃ©ho souboru
 
-%%%%%%%%%%%%%%%%%%%%%%  Seznam pouitıch zdrojù  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%  Seznam pouÅ¾itÃ½ch zdrojÅ¯  %%%%%%%%%%%%%%%%%%%%%%
 \newpage  % SEM NESAHEJTE!
-%\renewcommand{\bibname}{Seznam pouitıch zdrojù} % SEM NESAHEJTE!
-%\addcontentsline{toc}{chapter}{Seznam pouitıch zdrojù} % SEM NESAHEJTE!
+%\renewcommand{\bibname}{Seznam pouÅ¾itÃ½ch zdrojÅ¯} % SEM NESAHEJTE!
+%\addcontentsline{toc}{chapter}{Seznam pouÅ¾itÃ½ch zdrojÅ¯} % SEM NESAHEJTE!
 
 %\nocite{*}
 %\bibliographystyle{czechiso}
@@ -219,15 +213,15 @@ I would like to thank \vedouci for supervising and shaping my master thesis. I w
 \bibliography{all}
 
 \newpage % SEM NESAHEJTE!
-%%%%%%%%%%%%%%%%%%%%%%  PØÍLOHY PRÁCE %%%%%%%%%%%%%%%%%%%%%%
-\appendix  % pøílohy budou opravdu "Pøílohy"  :-)     SEM NESAHEJTE!
-\addcontentsline{toc}{chapter}{Appendix} % pøidat poloku do obsahu      SEM NESAHEJTE!
+%%%%%%%%%%%%%%%%%%%%%%  PÅ˜ÃLOHY PRÃCE %%%%%%%%%%%%%%%%%%%%%%
+\appendix  % pÅ™Ã­lohy budou opravdu "PÅ™Ã­lohy"  :-)     SEM NESAHEJTE!
+\addcontentsline{toc}{chapter}{Appendix} % pÅ™idat poloÅ¾ku do obsahu      SEM NESAHEJTE!
 
 \part*{Appendix}  % SEM NESAHEJTE!
-%\renewcommand{\appendixname}{Pøíloha} % aby se pøílohy nejmenovaly "Dodatek"  SEM NESAHEJTE!
+%\renewcommand{\appendixname}{PÅ™Ã­loha} % aby se pÅ™Ã­lohy nejmenovaly "Dodatek"  SEM NESAHEJTE!
 
-%-------- zde VYMÌÒTE NÁZVY vkládanıch souborù NEBO sem mùete rovnou napsat text pøíloh (a smate dva následující øádky)
-\input{appendixes.tex} % pøíloha 1: vloená z externího souboru
+%-------- zde VYMÄšÅ‡TE NÃZVY vklÃ¡danÃ½ch souborÅ¯ NEBO sem mÅ¯Å¾ete rovnou napsat text pÅ™Ã­loh (a smaÅ¾te dva nÃ¡sledujÃ­cÃ­ Å™Ã¡dky)
+\input{appendixes.tex} % pÅ™Ã­loha 1: vloÅ¾enÃ¡ z externÃ­ho souboru
 %\input{priloha2.tex}
 %\input{priloha3.tex}
 
