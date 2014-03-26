@@ -1,10 +1,10 @@
 \chapter{Machine Learning on RE}
-RE are big part of language realization of a navigation system and especially so in the GIVE scenario. Part of my work was attempt to apply machine learning techniques on S-GIVE dataset with a clear goal to help navigation system with RE. This part is presented in this chapter.
+RE are big part of language realization of a navigation system and especially so in the GIVE scenario. Part of my work were attempts to apply machine learning techniques on S-GIVE dataset with a clear goal to help navigation system with RE. This part is presented in this chapter.
 
-In the first section I'll describe attempts at predicting timing of the first reference to a target button. Second section talks about modeling of chains of references.
+In the first section I'll describe attempts at predicting timing of the first reference to a target button. Second section talks about modeling of chains of references. Third section briefly touches a topic of using room memory. In the last section, I will present my thoughts on the results of previous sections.
 
-\section{Introduction}
 \section{Timing of the first reference}
+\label{sec:timing-firsref-ml}
 Work of \citet{stoia2006sentence} was previously mentioned in related work section of chapter \ref{chap:bg}. They applied machine learning on timing of the first reference in a 3D virtual world. The set-up of their experiment is quite similar to the GIVE's one and so I decided it would be interesting to replicate their methodology on GIVE dataset. 
 
 I defined the problem of the timing of the first reference as a classification task, as did \citet{stoia2006sentence}. More precisely binary classification, the two classes being either refer to the target button or delaying the reference. After extracting the first references to buttons which needed to be pressed from the dataset, I excluded plural references, because of their complexity. Some buttons were placed on top of each other and IG wasn't sure which one need to be pressed. These were excluded as well because of the unnecessary confusion. That left me with 351 first references. For each first reference I have chosen one negative example, where IG could refer to the target but chose not to. I picked negative examples randomly from interval between entering room and time of the first reference. Overall, that is 702 data-points with perfectly balanced classes.
@@ -316,7 +316,7 @@ Spatial and movement& Decision Tree 	& 66.0	& 26.3 \\
 \label{tab:chains-ml-infgain}
 \end{table}
 
-The best classifiers for these 3 tasks can be found in respective results tables, marked by bold font. Similarly to previous attempts, all combinations of attributes and algorithms had the accuracy around the baseline. The last section of this chapter will address the negative results to more depth.
+The best classifiers for these 3 tasks can be found in respective results tables, marked by bold font. Similarly to previous attempts, all combinations of attributes and algorithms had the accuracy around the baseline. The last section of this chapter will address these and all previous results to more depth.
 
 \section{Room memory}
 Last machine learning problem I tackled was using memory of the previously visited rooms in RE for room switching. When IF has to return to a recently visited room, IG sometimes employ RE such as: ``Go to the room you were just in.'' Deciding whether to use the memory in room switching RE can be thought of as a classification task.
@@ -356,5 +356,18 @@ Model    & Mean accuracy (\%) & $2\times$ Std (\%) \\
 Despite not being able to significantly outperform the baseline using machine learning, I used the knowledge gained in the room memory modeling attempt. In the systems I developed for the experiment, which will be discussed in the last chapter, I created a simple rule for using room memory and enhanced the REG process.
 
 \section{Thoughts on ML in S-GIVE dataset}
+Thanks to better availability of annotated corpora, machine learning techniques are becoming popular in the field of REG, examples being mentioned in Section \ref{sec:relwork}. Inspired by similar research, I looked into a S-GIVE dataset, so far unexplored using ML, a dataset of spoken instruction giving in 3D virtual environment.
+
+Despite extensive feature extraction and tackling various problems, the results were unsatisfactory. In this section, I would like to present my thoughts, why I believe that was the case.
+
+First point to explore is the complexity of S-GIVE scenario. As was already discussed in Section \ref{sec:timing-firsref-ml}, S-GIVE worlds have specific properties, which most likely have significant influence on the way IG formulate their instructions. S-GIVE dataset is specific in high frequency of distractors, especially of the same category as the target of the references. To identify targets in such environment often requires taking into account relations between entities. This was one of the original constrains of early REG research, as mentioned in Section \ref{sec:bg-reg}, and only recently this constraint was attempted to be lifted. In some scenarios, the buttons were intentionally organized in complex arrays, where even IG wasn't sure which button needs to be pressed. Spatial features, which proved to be effective in research of \citet{stoia2006sentence}, likely loose their predictive power when dealing with situations of frequent distractors of the same type as the target.
+
+The dataset size have to be taken into account, when discussing the ML results. The relatively small number of participants and, on the other hand, higher number of scenarios, where REs were created, is something to consider. With smaller number of participants, IGs' personal strategies of referencing will play bigger role in the analysis. Some might prefer to reference the target button immediately, while others might postpone the reference until they removed more distractors through other movement instructions. These difference obviously make any attempts of machine learning difficult on a small dataset. With enough data it would be possible to separate strategies to clusters and examine each clusters separately. However with 20 participants, this is not possible or very difficult to achieve. These strategies are also likely to be influenced by IFs, further increasing uniqueness of REs produced for each pair of IG and IF. I strongly believe bigger dataset would be more successful in applying ML techniques.
+
+Last but not least, there is a question of used features. Spatial features are easier to extract from S-GIVE dataset than any other. While I attempted using other features apart from the spatial ones, they extraction is problematic and time consuming. I would speculate that the features about IF's behaviour and IG's personality might increase accuracy of presented models, but exploring them was beyond scope of this thesis. Not to mention, that some interesting features of a more personal character don't necessarily have to be in dataset at all and one would have to repeat the experiment to collect them.
+
+That being said, the ML attempts inspired in many ways the systems I used in the experiment in following chapter. 
+
+
 
 
