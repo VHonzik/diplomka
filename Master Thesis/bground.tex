@@ -1,7 +1,10 @@
 \chapter{Background}
 \label{chap:bg}
+Navigation is a broad problem intervening with different scientific areas. Generally speaking, a path to the destination must be found first. That problem is solved by path-planning, problem commonly associated with robotics, and specifically by pathfinding, a well-known and studied problem of artificial intelligence. Once a path is known, it must be realized into a natural language. The realization is studied by Natural Language Generation (NLG), a part of the discipline of Natural Language Processing (NLP). On top of that, one has to consider the domain the navigation is intended for. Differences in the design between car navigation and art gallery guide are immense. This paragraph was of course a very coarse description of navigation problem.
 
-\section{Navigation}
+What I would like to briefly touch on is why is navigation still an interesting problem, when navigation devices are nowadays almost a necessary part of the car equipment. Car navigation is a specific navigation problem. Great availability of maps is one of the reasons why the car navigation is so developed and massively produced. It has limited sense of direction, because cars only moves on roads (as far as navigation is concerned anyway). The roads can fork and form complicated cross-roads, but that isn't still nowhere close to a free movement of, for example, walking. The limited sense of directions ties to a relatively limited vocabulary. Thanks to usually well-defined space where car moves, the navigation system's world representation can be relatively straightforward. The car navigation is still a complicated problem, but being able to relatively well navigate drivers around mapped areas tells us a little about other navigation domains.
+
+Primary interest of this thesis is NLG part of navigation and more specifically referring expression generation, which I will introduce in the following section.  
 
 
 \section{Referring expression generation}
@@ -17,9 +20,6 @@ First REG research appeared in the 1980s. \citet{krahmer2012computational} state
 Apart from lifting the assumptions, recent REG research was interested in evaluation of REG algorithms. We can also see tendency to move from simple well-defined environments, towards more natural and complex ones.
 
 Exploring a dataset of spoken navigation through complex 3D virtual world, I have noticed some behaviours which slightly deviates from conventional focus of REG research. Speakers does not necessarily produce a reference which uniquely identifies the referent in current context. Instead, first they produce a reference which only partially identifies the referent and rely on feedback and additional RE when necessary. This thesis is primarily focused on this deviation.
-
-\section{Machine learning}
-ABBREVIATION ML
 
 \section{Related work}
 \label{sec:relwork}

@@ -1,5 +1,8 @@
 \chapter{Machine Learning on RE}
+\label{chap:ml}
 RE are big part of language realization of a navigation system and especially so in the GIVE scenario. Part of my work were attempts to apply machine learning techniques on S-GIVE dataset with a clear goal to help navigation system with RE. This part is presented in this chapter.
+
+Machine learning (ML) is becoming a popular topic together with a very broad term of Big Data. This branch of artificial intelligence encompasses various problems such as classification or clustering. Research in the area of ML spawned various algorithms for solving these problems and evaluation techniques for comparing the models outputted by the learning process. Regression, one of the most explored problem in ML, is a great example of how ML creates models which are only as good as the data they were trained on. Careful and thorough data analysis is crucial part of ML process. When it comes to feature extraction, trial and error are sometimes the only method for finding better models. 
 
 In the first section I'll describe attempts at predicting timing of the first reference to a target button. Second section talks about modeling of chains of references. Third section briefly touches a topic of using room memory. In the last section, I will present my thoughts on the results of previous sections.
 
@@ -319,6 +322,7 @@ Spatial and movement& Decision Tree 	& 66.0	& 26.3 \\
 The best classifiers for these 3 tasks can be found in respective results tables, marked by bold font. Similarly to previous attempts, all combinations of attributes and algorithms had the accuracy around the baseline. The last section of this chapter will address these and all previous results to more depth.
 
 \section{Room memory}
+\label{sec:room-memory-ml}
 Last machine learning problem I tackled was using memory of the previously visited rooms in RE for room switching. When IF has to return to a recently visited room, IG sometimes employ RE such as: ``Go to the room you were just in.'' Deciding whether to use the memory in room switching RE can be thought of as a classification task.
 
 I extracted all moments where IF went between rooms and determined whether the room memory was used from what was IG saying before going into the new room. I also extracted 3 features:
