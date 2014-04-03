@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt,twoside]{report}
-\usepackage[english]{babel}      % česky psaná práce
+\usepackage[english]{babel} 
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc} % vstupní znaková sada: Windows 1250
+\usepackage[utf8]{inputenc}
 \usepackage[a4paper, hmarginratio=3:2]{geometry}
 
 \usepackage{amsmath} % balíček pro pokročilou matem. sazbu
@@ -43,21 +43,21 @@
 
 \newcommand{\nazevcz}{Navigování ve virtuálním světě}        % zde VYPLŇTE český název práce (přesně podle zadání!)
 \newcommand{\nazeven}{Navigation in virtual environment}     % zde VYPLŇTE anglický název práce (přesně podle zadání!)
-\newcommand{\autor}{Václav Honzík}           % zde VYPLŇTE své jméno a příjmení
-\newcommand{\rok}{2013}                % zde VYPLŇTE rok odevzdání, např. 2006
+\newcommand{\autor}{Bc. Václav Honzík}           % zde VYPLŇTE své jméno a příjmení
+\newcommand{\rok}{2014}                % zde VYPLŇTE rok odevzdání, např. 2006
 \newcommand{\vedouci}{Doc. Ing. Zdeněk Žabokrtský, Ph.D.}         % zde VYPLŇTE jméno a příjmení vedoucího práce, včetně titulů
                                                                % např. Doc. Ing. Ivo Malý, Ph.D.
 \newcommand{\pracovisteVed}{Institute of Formal and Applied Linguistic, Faculty of
 Mathematics and Physics, Charles University in Prague} % zde VYPLŇTE pracoviště vedoucího práce, je-li jiné než KSE FJFI ČVUT
 
 \newcommand{\konzultant}{Prof. Kristina Striegnitz, Ph.D.} % POKUD MÁTE určeného konzultanta, NAPIŠTE jeho jméno a příjmení
-\newcommand{\pracovisteKonz}{Union College, Schenectady USA} % POKUD MÁTE konzultanta, NAPIŠTE jeho pracoviště
+\newcommand{\pracovisteKonz}{Union College, Schenectady, NY USA} % POKUD MÁTE konzultanta, NAPIŠTE jeho pracoviště
 
 
-\newcommand{\klicova}{keywords cz}   % zde NAPIŠTE česky max. 5 klíčových slov
-\newcommand{\keyword}{keywords en}       % zde NAPIŠTE anglicky max. 5 klíčových slov (přeložte z češtiny)
-\newcommand{\abstrCZ}{abstract cz} % zde NAPIŠTE abstrakt v češtině
-\newcommand{\abstrEN}{abstract en}                  % zde NAPIŠTE abstrakt v angličtině
+\newcommand{\klicova}{navigace, odkazující výrazy, jazyková realizace}   % zde NAPIŠTE česky max. 5 klíčových slov
+\newcommand{\keyword}{navigation, referring expressions, language realization}       % zde NAPIŠTE anglicky max. 5 klíčových slov (přeložte z češtiny)
+\newcommand{\abstrCZ}{Tato práce se zabývá generováním přirozeného jazyka pro navigovaní ve virtuálním světě. Předmětem zájmu jsou zajímavé strategie odkazování, které byly objeveny v dostupných datech v nichž jedna osoba navigovala druhou. Tyto strategie se vymikají běžným metodám v disciplíně generování odkazujících výrazů a tak je tato práce analyzuje a pokouší se je modelovat technikami strojového učení. V rámcí této práce je také proveden experiment studujicí vliv používání těchto strategií na efektivnost navigování. Výsledky naznačují, že tyto strategie jsou přílíš komplexní na to aby mohly být uspěšně modelovány prostorovými informacemi ze scény a musí k tomu být využity i lidské faktory. Experiment ukázal, že strategie DOLPNIT vliv na efektivnost navigování. } % zde NAPIŠTE abstrakt v češtině
+\newcommand{\abstrEN}{This thesis discusses a natural language generation in a virtual environment navigational task. It focuses on interesting referencing strategies which was discovered in available dataset of human to human interaction. Because these strategies does not follow common methodology of referring expression generation field, this paper analyses them and attempts to model them using machine learning techniques. It also presents an experiment assessing their effect on the task proficiency. The results suggest that such strategies are too complex to model using spatial information from the scene and human factors must be taken into account. The experiment concludes that they FILL RESULTS effect on the task proficiency.   }                  % zde NAPIŠTE abstrakt v angličtině
 
 \begin{document}
 
@@ -135,7 +135,7 @@ I declare, that I have developed my master thesis independently and used only th
 {\bf Acknowledgment}
 
 \vspace{5mm} % vertikální mezera
-I would like to thank \vedouci for supervising and shaping my master thesis. I would like to also thank \konzultant for giving me the opportunity and helping me with my master thesis.
+I would like to thank \vedouci{} for supervising and shaping my master thesis. I would like to also thank \konzultant{} for giving me the opportunity and helping me with my master thesis.
 
 \begin{flushright}
 \autor
@@ -170,10 +170,10 @@ I would like to thank \vedouci for supervising and shaping my master thesis. I w
   {\em Název práce:} & ~\\
   \multicolumn{2}{l}{\odstavec{\textwidth}{\bf \nazevcz}}\\[5mm]
   {\em Autor:} & \autor \\[5mm]
-  {\em Obor:} & Inženýrská Informatika \\
-  {\em Typ práce:} & Diplomová práce \\[5mm]
-  {\em Vedoucí:} & \odstavec{\delka}{\vedouci \\ \pracovisteVed} \\[5mm]
-  {\em Konzultant:} & \odstavec{\delka}{\konzultant \\ \pracovisteKonz} \\[5mm]
+%  {\em Obor:} & Inženýrská Informatika \\
+%  {\em Typ práce:} & Diplomová práce \\[5mm]
+%  {\em Vedoucí:} & \odstavec{\delka}{\vedouci \\ \pracovisteVed} \\[5mm]
+%  {\em Konzultant:} & \odstavec{\delka}{\konzultant \\ \pracovisteKonz} \\[5mm]
   \multicolumn{2}{l}{\odstavec{\textwidth}{{\em Abstrakt:} ~ \abstrCZ \\ }} \\[5mm]
   {\em Klíčová slova:} & \odstavec{\delka}{\klicova}
 \end{tabular}
