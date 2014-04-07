@@ -4,19 +4,21 @@ Trough out this thesis, I was interested in a strategy of referencing, where the
 In the first section, I'll present my hypothesis concerning the strategy of splitting references. The second section will describe the experimental set-up. In the last section, I'll summarize the results of the experiment.
 
 \section{Hypothesis}
-To evaluate strategy of splitting references, I compared two NLG systems, which I have built to resemble behaviour observed in the S-GIVE dataset. The two systems are identical, except for a difference in REG strategy for the target button. One would represent the strategy of splitting references, while the other one would represent more standard approach of referencing. They will be thoroughly described in Section \ref{sec:exper-setup}.
+To evaluate strategy of splitting references, I compared two NLG systems, which I have built to resemble IGs from the S-GIVE dataset. The two systems are identical, except for a difference in REG strategy for the target button. One would represent the strategy of splitting references, while the other one would represent more standard approach of referencing. They will be thoroughly described in Section \ref{sec:exper-setup}.
 
 I've formulated my hypothesis as a pair of null and alternative hypotheses:
 
 \begin{nullhypo}
-Distributing information to uniquely identify the referent across multiple referring expressions separated by non-negligible time intervals does not have an impact on the task proficiency.
+Distributing information to uniquely identify the referent across multiple referring expressions separated by non-negligible time intervals has an impact on the task proficiency.
 \end{nullhypo}
 
 \begin{alterhypo}
-Distributing information to uniquely identify the referent across multiple referring expressions separated by non-negligible time intervals has an impact on the task proficiency.
+Distributing information to uniquely identify the referent across multiple referring expressions separated by non-negligible time intervals does not have an impact on the task proficiency.
 \end{alterhypo}
 
 Measuring task proficiency can be done in several ways. In previous chapters, I've often employed duration of the experiment. However, for this experiment I've chosen more specific measure, in order to diminish effects of other factors. Measuring time from the point of uttering the first reference up to the pressing of the targeted button not only diminishes effects of other variables in the navigation process, but can also be interpreted as a measure how well were the references understood by IF.
+
+For testing the hypothesis I've compared the average time between the first reference and the pressing of the target button. I've used independent two-sample t-test for unequal sample size. The unequal sample size comes from the fact that the subject could press a wrong button and therefore the number of potential references may vary. 
 
 \section{Experimental set-up}
 \label{sec:exper-setup}
