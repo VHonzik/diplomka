@@ -7,11 +7,11 @@ In the first section, I will introduce the dataset and provide technical details
 
 \section{General overview}
 \label{sec:general-overview}
-The S-GIVE dataset is different from previous GIVE Challenge experiments because the IG's instructions were of a spoken form. That changes many aspects of the discourse. For one thing, the IG knows when the IF received his instruction, which is not true for the written instructions. That promotes faster feedback and allows interrupting during an instruction. On the other hand, in some cases, the spoken word does not follow grammatical rules. Moreover, interjections are very common, as are incomplete sentences. That makes S-GIVE dataset complicated yet interesting to explore.
+The S-GIVE dataset is different from previous GIVE Challenge experiments because the IG's instructions were of a spoken form. That changes many aspects of the discourse. For one thing, the IG knows when the IF received his instruction, which is not true for the written instructions. That promotes faster feedback and allows interrupting during an instruction. However, in some cases, the spoken word tends to be less formal and grammatically correct. Moreover, interjections are very common, as are incomplete sentences. That makes S-GIVE dataset complicated yet interesting to explore.
 
 The data-collection started in July and finished November of 2012. Through that period 21 interactions between two human subjects were recorded. Originally, 22 pairs participated, but one of the pair failed to finish the tasks and is excluded from the dataset. The subjects were asked to bring someone they know and they were financially compensated for the effort. 
 
-The set-up for the experiment is in Figure \ref{fig:give-experiment-setup}. One human subject was an instruction giver (IG). He is on the right in Figure \ref{fig:give-experiment-setup}. His role was essentially the role of NLG system in GIVE Challenge. He/she was able to see a map of the world, which was updated in real-time and he/she got information about all necessary steps to finish the task. In addition, he was able to see the other person's client screen. He communicated with the other person through a microphone and his goal was to navigate the other person through the world and make him finish the treasure-hunt.
+The set-up for the experiment is in Figure \ref{fig:give-experiment-setup}. One human subject was an instruction giver (IG). He is on the right in Figure \ref{fig:give-experiment-setup}. His role was essentially the role of NLG system in GIVE Challenge. He/she was able to see a map of the world, which was updated in real-time and he/she got information about all necessary steps to finish the task. In addition, he was able to see the other person's client screen. He/she communicated with the other person through a microphone and his/her goal was to navigate the other person through the world and make him/her finish the treasure-hunt.
 
 \begin{figure}[!htbp]
   \centering
@@ -45,7 +45,7 @@ Each pair did one short tutorial world. After that they switched roles of instru
 	\label{fig:dataset-world1d}
 \end{figure}
 
-Similarly to the GIVE Challenge, after all 3 rounds subjects were asked to fill in a questionnaire. Its purpose was to get demographic and other relevant information on subjects. The questionnaire can be divided into three parts. First part was only filled out by IF and rated IG and his instruction giving on a scale from 1 to 7. Complete list of its questions follows: 
+Similarly to the GIVE Challenge, after all 3 rounds subjects were asked to fill in a questionnaire. Its purpose was to get demographic and other relevant information on subjects. The questionnaire can be divided into three parts. First part was only filled out by IF and rated IG and his instruction giving on a scale from 1 to 7. Complete list of the first part questions follows: 
 
 \begin{enumerate}
 \item
@@ -141,7 +141,7 @@ As was mentioned in Chapter \ref{chap:give-challenge}, the entire session is log
 
 Apart from logs, there are of course sound files of the IG giving directions. These were transcribed and together with some information from the logs transformed into ELAN files. ELAN is an annotation software \citep{sloetjes2008annotation}. I will use the term \textit{automatic annotations} for the ELAN files created from logs and transcribed audio. 
 
-Building on top of these automatic annotations are manual annotations. They are primarily concerned with referring expressions and also stored in ELAN format. Most referring expressions in GIVE aim to locate a button, which needs to be pressed. I will call the button, which is a goal of a referring expression, the target button. Which button is the target button of a reference is one of the layers in the manual annotations. Another layer of the annotations is some basic grouping of the references. Whether it is a reference to a single button, to a group of button, to a landmark and so on. The third layer looks deeper into the contents of the reference. It notes whether the reference contains for example the color of a button, whether distractors or landmarks are part of the reference or whether the reference explicitly points out that the button was already pressed before.
+Building on top of these automatic annotations are manual annotations. They are primarily concerned with referring expressions and also stored in ELAN format. Most referring expressions in GIVE aim to locate a button, which needs to be pressed. I will call the button, which is a goal of a referring expression, the target button. Which button is the target button of a reference is one of the layers in the manual annotations. Another layer of the annotations is some basic grouping of the references, whether it is a reference to a single button, to a group of button, to a landmark and so on. The third layer looks deeper into the contents of the reference. It notes whether the reference contains for example the color of a button, whether distractors or landmarks are part of the reference or whether the reference explicitly points out that the button was already pressed before.
 
 The previously mentioned logs, automatic annotations and manual annotations together form the dataset this chapter is dealing with.
 
@@ -160,13 +160,15 @@ IG: Press the button on the wall you are looking at, that's far from the lamp an
 IG: Press it.\\
 \end{verse}
 
+Next section, looks at how world selection and demographic factors affected the task performance.
+
 \section{World and Demographic factors}
 \label{sec:world-demo-factors}
 As was noted repeatedly in Chapter \ref{chap:give-challenge}, the world had significant influence on the task success rate in GIVE Challenge. However in the GIVE Challenge the worlds were designed to be of a different difficulty, whereas in the S-GIVE dataset they were designed to be similar in terms of the difficulty to minimize effects outside of navigation strategy. In addition, all the sessions were successful except for one which was discarded. The question about influence of worlds must be reformulated, since the task success rate no longer makes sense. Instead, I will measure task performance by time required to finish the task (duration) and also use other performance measure when appropriate.
 
 Despite the design choices, I found out that the normal worlds 1 and 3, had a different mean duration (p-value $0.0473$ for unpaired two-sample t-test). There are multiple explanation for this difference. Relatively small number of subjects is certainly one of them. We can also notice in the figure \ref{fig:dataset-world3} slightly complicated system of hallways in the center of world-3. But this discovery does not have major influence on my work. Moreover, the difficult world did not have significant difference between their mean duration (p-value $0.6195$ for unpaired two-sample t-test).
 
-Another thing I was interested in was the influence of gaming experience of both participants on certain performance measures, namely on the duration, on the average speed of IF movement and the time the IF spent moving. The average speed of IF is simply a total distance the avatar controller by IF travelled in a session divided by duration. The time IF spent moving aggregates time where avatar was either motionless or only rotating in place. 
+Another thing I was interested in was the influence of gaming experience of both participants on certain performance measures, namely on the duration, on the average speed of IF movement and the time the IF spent moving. The average speed of IF is simply a total distance the avatar controller by IF travelled in a session divided by duration. The time IF spent moving aggregates time where avatar wasn't either motionless or wasn't only rotating in place. 
 
 I found correlations between gaming experiences and these variables. Table \ref{tab:demfactors-gaming} shows the correlation matrix between gaming experience questions and performance measure.  Not surprisingly, these correlation are especially high for the IF, since he/she is the one who is actually playing the world. The past gaming experience (questions 7 in third part of the questionnaire) is more important than contemporary playing (question 6 in the third part of the questionnaire). Most prominent are the familiarity of IF with 3D games (question 5),  the IF hours per week spent playing games at the past peak gaming period (question 7), the same variable for IG and hours spent gaming per week for IF at present (question 6). For the difficult worlds some correlations change slightly. IF's gaming at past peak period has much weaker correlation with duration here. In general, individuals who are familiar with games (gamers) take less time to finish the world, they spent more time moving and they have higher speed.
 
@@ -247,7 +249,6 @@ Role    & Familiarity with 3D games \\
 \label{tab:demfactors-gender-fam}
 \end{table}
 
-
 Table \ref{tab:demfactors-age} shows correlation matrix for age. The age of IF have positive correlation with task proficiency measured in the duration and in difficult worlds this correlation is one the strongest ones. Older IF are also moving less and are generally slower. For IG the correlations have the same direction, however they are much weaker.
 
 \begin{table}[!htbp]
@@ -267,7 +268,7 @@ Difficult& IF & 0.614 &	-0.275 &-0.196\\
 \label{tab:demfactors-age}
 \end{table}
 
-Lastly I was interested how familiarity of participants with each other (questions 9-12 in the third part) influenced the task performance. Table \ref{tab:demfactors-famother} shows, that the knowledge of the partner had a positive impact on the task efficiency. The most correlated question was question 10, how well they know each other.
+Lastly I was interested how familiarity of participants with each other (questions 9-12 in the third part) influenced the task performance. Table \ref{tab:demfactors-famother} shows, that the knowledge of the partner had a positive impact on the task efficiency. The most correlated question was question 10: how well they know each other.
 
 \begin{table}[!htbp]
  \centering
@@ -298,8 +299,10 @@ Difficult& IF Co-players in past (12) 	& -0.078\\
 \label{tab:demfactors-famother}
 \end{table}
 
+Exploring interesting correlations, I will now focus on RE.
+
 \section{Referring expressions}
-Because REs are the main focus of my research, this section serves as an introductory analysis of REs in the S-GIVE dataset.
+Because REs are the main focus of my research, this section serves as a brief introductory analysis of REs in the S-GIVE dataset.
 
 Overall, 793 REs were annotated in the manual annotations. Apart from time interval of the reference, several other facts were annotated in the manual annotations, as was mentioned in Section \ref{sec:general-overview}. First of all, the target button of each RE was annotated. The count of distinct target buttons is 29.  
 
@@ -381,9 +384,11 @@ Room location 	& 5.81\\
 \label{tab:res-contents}
 \end{table} 
 
+From previous tables, we can see prevalence of relatively simple RE. However, the next section will show that the situation is more complex than it may seem from this section.
+
 \section{Chains of references}
 \label{sec:dataset-chains}
-Interesting phenomenon I have noticed and further explored in the dataset are consecutive references to one button. It can be seen in following sentences: ``Straight ahead of you there on the opposite wall there are two blue buttons. Press the one on the right. The one close to the picture.'' The IG started of with a references to a group of two buttons; the target button being one of those two. In the second sentence he picked out the target button from the group. In the last sentence IG made another reference containing landmark, adding redundant information. Since the references are concerned with one target button and follow each other relatively fast, I have called them chains of references (chains, in short).
+Interesting phenomenon I have noticed and further explored in the dataset are consecutive references to one button. It can be seen in following sentences: ``Straight ahead of you there on the opposite wall there are two blue buttons. Press the one on the right. The one close to the picture.'' The IG started of with a references to a group of two buttons; the target button being one of those two. In the second sentence he picked out the target button from the group. In the last sentence IG made another reference containing landmark, adding redundant information. Since the references are concerned with one target button and follow each other relatively fast, I have called them chains of references (chains, in short). These chains are examples of non-standard referencing strategies, I was mentioning since the beginning of this paper.
 
 The chains vary in length, from short ones, consisting of only two references, up to lengthy ones with eight references following each other. The example from previous paragraph is three references long. Figure \ref{fig:chains_len_histo} shows histogram of the chains length.
 
@@ -394,8 +399,7 @@ The chains vary in length, from short ones, consisting of only two references, u
 	\label{fig:chains_len_histo}
 \end{figure}
 
-
-The chains are significant part of the discourse, in fact over 77\% of all RE belong to a chain. However, the chains have multiple linguistic functions, which makes them difficult to explore. Even inside one chain, there are often combination of functions. I have manually annotated some common functions of the chains. Most common one is to inform IF that he is supposed to press the target button. A simple example of this function, which I call action, is in following discourse: ``The red button in front of you. Press that one.'' It may sound redundant to use action function as the experiment progresses, since the IF are not manipulating the buttons in any other way than pressing them. But I have found out that it's often the case.
+The chains are significant part of the discourse, in fact over 77\% of all RE belong to a chain. However, the chains have multiple linguistic functions, which makes them difficult to explore. Even inside one chain, there are often combination of functions. I have manually annotated some common functions of the chains. Most common one is to inform IF that he is supposed to press the target button. A simple example of this function, which I call action function, is in following discourse: ``The red button in front of you. Press that one.'' It may sound redundant to use action function as the experiment progresses, since the IF are not manipulating the buttons in any other way than pressing them. But I have found out that it's often the case, that IG still use action functions in later stages of navigation.
 
 Another common function is confirmation: ``That same red button we pressed before, we'll press that again. Yeah that one.'' The IG confirms at the end of previous utterance that IF is looking at or heading to a correct target button.
 
@@ -405,7 +409,7 @@ When a group of buttons is utilized in RE and the target button is part of that 
 
 When IF has clearly chosen the wrong button, IG will try to correct that error. I call that an error function. Following extract features this function: ``That blue button. No no no. The other. That one.''
 
-Summary of the functions is in Table \ref{tab:chains-functions}. Please note that these functions are not exclusive. One chain can have both confirmation and specification function.
+Summary of the functions, which I have manually annotated, is in Table \ref{tab:chains-functions}. Please note that these functions are not exclusive. One chain can have both confirmation and specification function.
 
 \begin{table}[!htbp]
  \centering
@@ -423,6 +427,8 @@ Error 			& 11.11\\
 \caption{Percentage of chains having specific functions}
 \label{tab:chains-functions}
 \end{table}
+
+These chains will be further explored in the following chapter, but as one can already notice, they are complex language phenomenon.
 
 
 

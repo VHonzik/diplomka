@@ -1,8 +1,12 @@
 \chapter{GIVE Challenge}
 \label{chap:give-challenge}
-Important framework for this thesis is the GIVE Challenge \citep{koller2010first}. The data I used to develop the hypothesis were collected using the GIVE framework \citep{koller2010first}. I used GIVE framework to implement and test my hypothesis. Therefore, in this chapter I will describe this academic competition in detail.  
+Important framework for this thesis is the GIVE Challenge \citep{koller2010first}. The data I used to study the referencing strategies were collected using the GIVE framework \citep{koller2010first}. I used GIVE framework to implement and test a hypothesis regarding these strategies. Therefore, in this chapter I will describe this academic competition in detail.  
 
-The first section will answers basic questions such as what is the GIVE Challenge, why was it created and what are its interesting properties. In the next section, I will provide a brief history of the GIVE Challenge together with some of its results. In the third section, the focus will be a detailed description of the shared task and the virtual world of the GIVE Challenge.
+The first section will answers basic questions such as what is the GIVE Challenge, why was it created and what are its interesting properties. 
+
+In the next section, I will provide a brief history of the GIVE Challenge together with some of its results. 
+
+In the third section, the focus will be a detailed description of the shared task and the virtual world of the GIVE Challenge.
 
 \section{Introduction}
 The GIVE Challenge was a series of Natural Language Generation (NLG) competitions run from November 2008 to March 2012. Participants developed NLG systems to navigate human-controlled avatars in a 3D virtual environment. The real-time navigation was realized through written instructions displayed on the screen. Goal of the navigation was to finish a treasure-hunt game. In Figure \ref{fig:give-client} we can see the GIVE client with virtual world and example of an instruction. A more detailed description of the task and the environment is in the Section \ref{sec:task-give-world}.
@@ -14,14 +18,14 @@ The GIVE Challenge was a series of Natural Language Generation (NLG) competition
 	\label{fig:give-client}
 \end{figure}
 
-\citet{koller2010first} state that one of the goals of the GIVE Challenge was spawning interest in NLG, a subfield of computational linguistics (CL), and was inspired by other competitions in the field such as the Recognizing Textual Entailment challenge\footnote{\url{http://pascallin.ecs.soton.ac.uk/Challenges/}} and NIST machine
+\citet{koller2010first} state that one of the goals of the GIVE Challenge was spawning an interest in NLG, a subfield of computational linguistics (CL), and was inspired by other competitions in the field such as the Recognizing Textual Entailment challenge\footnote{\url{http://pascallin.ecs.soton.ac.uk/Challenges/}} and NIST machine
 translation competition\footnote{\url{http://www.itl.nist.gov/iad/mig//tests/mt/}}.
 
 According to \citet{koller2010first}, another important goal was to introduce and explore a new way of evaluating NLG algorithms, techniques and systems in a shared task. More specifically a shared task which was, on the one hand, complex enough to encompass multiple NLG subtasks and, on the other hand, was only concerned with NLG and not any other fields of computational linguistic.
 
 Three basic approaches to evaluation of NLG systems are compared annotated corpora, measuring task performance in an experiment and human judges evaluation. \citet{koller2010first} argue the advantages and disadvantages of these evaluation in more depth, therefore I will only provide a brief summary. The first approach compares output of the NLG system to an annotated corpora, also known as a gold-standard. It is fast and cheap approach, but a problem with it lies in the complexity of the natural language. We can often express concepts in many different ways and there is often no telling which way is a better one. The second approach conducts an experiment and measures task performance on human subjects. Measuring task performance avoids the problems of gold-standard, but it is expensive and time consuming. Lastly, trained human judges are used to evaluate the system. It is less demanding than the second approach, but for the cost of certainty, that the results correspond with results one might achieve with non-expert subjects.
 
-The GIVE Challenge proposes and successfully implements a new, in a sense that it wasn't used for NLG before, approach through Internet-based evaluation. The basic premise is using a client-server software methodology. The client is a program installed on test subject computer, which is easily downloadable from a public website. The client connects through the Internet to a matchmaker server and random evaluation world is selected. Matchmaker also connects the client to a randomly selected NLG system, which itself, can be hosted on a different server. Client and NLG systems then communicate back and forth until the task is finished. Matchmaker finally logs the entire sessions to database. Figure \ref{fig:give-clientserver} shows that architecture in a simple diagram.
+The GIVE Challenge proposes and successfully implements a new approach, in a sense that it wasn't used for NLG before, through Internet-based evaluation. The basic premise is using a client-server software methodology. The client is a program installed on test subject computer, which is easily downloadable from a public website. The client connects through the Internet to a matchmaker server and random evaluation world is selected. Matchmaker also connects the client to a randomly selected NLG system, which itself, can be hosted on a different server. Client and NLG systems then communicate back and forth until the task is finished. Matchmaker finally logs the entire sessions to database. Figure \ref{fig:give-clientserver} shows that architecture in a simple diagram.
 
 \begin{figure}[!htbp]
   \centering
@@ -30,13 +34,13 @@ The GIVE Challenge proposes and successfully implements a new, in a sense that i
 	\label{fig:give-clientserver}
 \end{figure}
 
-This approach immediately presents several advantages. It does not require physical presence of the test subject in a laboratory. The subject simply downloads the client from a website and is able to do the experiment at his/her convenience. Second obvious advantage is a scalability. The number of individuals which can parallelly undertake the experiment is only limited by the servers' load. Thanks to the low costs, advertisement becomes the decisive limitation on the number of subjects. Take for example second instalment of the GIVE Challenge which had up to 1800 participants.
+This approach immediately presents several advantages. It does not require physical presence of the test subject in a laboratory. The subject simply downloads the client from a website and is able to do the experiment at his/her convenience. Second obvious advantage is a scalability. The number of individuals which can parallelly undertake the experiment is only limited by the servers' load. Thanks to the low costs, advertisement becomes the decisive limitation on the number of subjects. Take for example the second instalment of the GIVE Challenge which had up to 1800 participants.
 
 On the other hand, part of the control over the experiment is lost in this approach; for example the control over subject pool. Another problem which rises with this approach is that individuals can repeat the experiment.
 
-In addition to Internet-based evaluation, the GIVE Challenge utilizes variety of evaluation measures of both objective and subjective nature. Among objective measure are task success rate, number of instructions or time required to finish the task. For subjective measures a questionnaire was used at the end of the session. The questionnaire mostly used a 5 point scale with question such as how clear where the instruction or how friendly was the system. Some of the measures intentionally collided with each other, putting emphasize on a certain characteristic of the system.
+In addition to Internet-based evaluation, the GIVE Challenge utilized variety of evaluation measures of both objective and subjective nature. Among objective measure were task success rate, number of instructions or time required to finish the task. For subjective measures a questionnaire was used at the end of the session. The questionnaire mostly used a 5 point scale with question such as how clear where the instruction or how friendly was the system. Some of the measures intentionally collided with each other, putting emphasize on a certain characteristic of the system.
 
-Having presented the basic concept of the GIVE Challenge and reasons for its creation, I will now move onto brief history of this competition. 
+Having presented the basic concept of the GIVE Challenge and reasons for its creation, I will now move onto a brief history of this competition. 
 
  
 \section{History of GIVE Challenge}
@@ -52,7 +56,7 @@ The second instalment (GIVE-2) run from August 2009 (data collection starting in
 
 This time 1825 games were played over seven NLG systems developed by six teams from: Dublin Institute of Technology, Trinity College Dublin, Universidad Complutense de Madrid, University of Heidelberg, Saarland University and INRIA Grand-Est in Nancy (2 systems).
 
-There was a big drop in success rate, most likely linked to the free movement and the increase of difficulty in the evaluation worlds. Similarly to results in GIVE-1, there was an influence of English proficiency and game world on the task success rate. Additionally, age of the subject played a role in the time required to finish the task and number of actions to finish the task (younger subjects being faster and requiring less actions). The difference between genders in time required to finish the task disappeared in GIVE-2.
+There was a big drop in success rate, most likely linked to the free movement and the increase of difficulty in the evaluation worlds. Similarly to results in GIVE-1, there was an influence of English proficiency and game world on the task success rate. Additionally, age of the subject played a role in the time required to finish the task and number of actions to finish the task (younger subjects being faster and requiring less actions). The difference between genders in time required to finish was not present in GIVE-2.
 
 Some teams participating in the GIVE Challenge tried to use a corpora of a human to human interactions in GIVE scenario. They were learning language expression or decision-making process and applying them in their NLG systems. The teams were however relying on small self-collected datasets. In a light of this, organizers of GIVE Challenge decided they would collect and provide dataset for future use. \citet{gargett2010give} describe this dataset, which was used in the next instalment of the GIVE challenge.
 
@@ -62,11 +66,11 @@ Eight NLG systems participated from 7 teams: University of Aberdeen, University 
 
 Apart from comparing the systems through objective and subjective measures, \citet{striegnitz2011report} again examined effects of evaluation worlds and demographics factors on task success rate. The evaluation worlds and the English proficiency had an effect. Additionally computer expertise and familiarity with computer games significantly influenced the task performance. The difference between male and female subject wasn't significant.
 
-The following section describes the shared task in more detail and lists possible contents of the GIVE virtual worlds.
+The following section describes the shared task in more detail and lists possible objects of the GIVE virtual worlds.
 
 \section{Task and GIVE world}
 \label{sec:task-give-world}
-The GIVE world is a 3D virtual world. The world is an indoor environment, comprising of rooms  connected by doors. It's defined in a human-readable format and stored in a text file. The following objects can be places in a world:
+The GIVE world is a 3D virtual world. The world is an indoor environment, comprising of rooms connected by doors. It's defined in a human-readable format and stored in a text file. The following objects can be places in a world:
 
 \begin{itemize}
 \item
@@ -104,6 +108,7 @@ Trophy
 \item
 Wall
 \end{itemize}
+
 In addition, some of these objects can have attributes, states or can operate other objects. Buttons have colors as an example of attribute. Doors and safes can be in a closed or an open state. Buttons can operate doors, safes or pictures.
 
 Walls are actually created automatically by defining shapes of rooms. Rooms can have rectangular shape or can be defined by a polygon. I will sometimes use a term ``corridor'' which is a connecting room, usually not containing any button.
@@ -121,7 +126,7 @@ Figure \ref{fig:give-evalworldexmaple} shows an evaluation world number one from
 
 The flexibility of GIVE world creation allows relatively broad range of scenarios for the task. On the other hand, all the GIVE Challenge instalments consisted of similar sequence of steps.
 
-The goal of all the GIVE Challenge worlds is to pick up a trophy. The trophy is hidden in a closed safe. In order to open the safe a sequence of buttons, usually counting somewhere around 6 buttons, has to be pressed. The safe can be also hidden by a picture, which needs to be put aside. The buttons in a safe-opening series are often in different rooms. Rooms can be also closed off, requiring another button press to open the door. While moving around the world, player has to avoid alarm tiles. Stepping on an activated alarm tile causes an immediate loss. Alarm tiles can also block the path and need to deactivated by a button press. Some buttons also cause an alarm and an immediate loss.
+The goal of all the GIVE Challenge worlds is to pick up a trophy. The trophy is hidden in a closed safe. In order to open the safe a sequence of buttons, usually counting somewhere around 6 buttons, has to be pressed. The safe can be also hidden by a picture, which needs to be put aside. The buttons in a safe-opening series are often in different rooms. Rooms can be also closed off, requiring another button press to open the door. While moving around the world, player has to avoid alarm tiles. Stepping on an activated alarm tile causes an immediate loss. Alarm tiles can block the only path and need to deactivated by a button press. Some buttons also cause an alarm and an immediate loss.
 
 Depending on the number of rooms, complexity of buttons arrangement and length of safe-opening sequence, the task can range from short and trivial problem easily handled by a few instruction templates, to a long and hard case, where it's impossible to capture every possible scenario.
 
