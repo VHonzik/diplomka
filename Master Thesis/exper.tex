@@ -78,9 +78,25 @@ Second, I exploited the room memory, first presented in Section \ref{sec:room-me
 
 The most complicated task are REs to a target button. This is where the systems Alpha and Beta differ. Once the IF enters the room where a button needs to be pressed, the systems decide whether a reference containing the color of the button and the direction to the button will uniquely identifies the target button. That is, whether there are distracting buttons of the same color in the same direction. If there are none, both systems simply generate a RE like this one: ``Press the green button behind you.'' However, if this (first) RE would not uniquely identify the button, additional information must be provided. The additional information picks out the target button from the group of distractors. That is done either through a landmark, which I have placed in worlds so it is possible in most cases or it is done in a similar way the door specifying RE were created. That is sorting the group of distractors and the target button by their distance to the IF and using the target button's index. Both systems are flexible enough to be able to provide unique identification to a substantial number of cases.
 
-NOTE ADD EXAMPLES OF SYSTEMS RE TO BUTTONS
-
 The system Beta will present that additional information as part of the first RE. System Alpha, on the other hand, separates this additional information to a new RE, which is not presented immediately. The Alpha system waits until the target button is visible and only then presents the second RE. Since the first RE contains direction information, it is presumed the IF will start moving towards the target button.
+
+An example of instructions by Alpha system is in the following text. Spatial information is transcribed in parentheses for the sake of clearness.
+
+\begin{verse}
+(IF enters a new room.)\\
+Alpha: Press the red button on your left.\\
+(IF turns left and sees three red buttons.)\\
+Alpha: The one next to the flower.\\
+(IF goes and press the correct button)\\
+\end{verse}
+
+An example of instructions by Beta system is in the following text. 
+
+\begin{verse}
+(IF enters a new room.)\\
+Beta: Press the red button on your left, the one next to the flower.\\
+(IF turns left and goes press the red button.)\\
+\end{verse}
 
 In cases where additional information is needed, both systems provide positive feedback when the IF is close and looking at the target button, measured by multiplying the distance between the IF and target button and the angle between them and comparing it to a threshold. Once a button was pressed, either positive or negative feedback is generated, depending whether the IF pressed the correct button.
 
